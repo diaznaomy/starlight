@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+
+    <!-- Bootstrap CSS solo si querés el carrusel bien estilizado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS para el carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="./img/Starlight.png" alt="logo">
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="">
+                <h3>Productos</h3>
+            </a>
+            <a href="">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="">
+                <h3>Contacto</h3>
+            </a>
+            <a href="">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="./img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <main>
+        <div class="promo-container">
+            <div class="promo-image">
+                <img src="./img/poster.png" alt="Poster Starlight">
+            </div>
+
+            <div class="promo-texto">
+                <h2><span class="marca">✨ Starlight:</span></h2>
+                <h3><span class="degradado">tu música, tu vibra, tu merch.</span></h3>
+
+                <p>
+                    Descubre, escucha y crea tus playlists favoritas mientras consigues el merch de tus artistas en un
+                    solo lugar.<br><br>
+                    Con Starlight, cada canción se convierte en una experiencia única, conectándote con la música y el
+                    estilo que te hace brillar.
+                    <span class="emoji">🎶🌟</span>
+                </p>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

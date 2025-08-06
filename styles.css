@@ -8,6 +8,11 @@
     src: url(./Fonts/Shrikhand-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Rosie';
+    src: url(./Fonts/Rosie\ Brown\ Serif\ Demo.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -67,6 +72,7 @@ header img {
 
 #burger img {
     width: 2.3em;
+    align-self: right;
 }
 
 #navmenu {
@@ -81,7 +87,7 @@ header img {
 #navmenu a {
     text-decoration: none;
     color: black;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
@@ -161,12 +167,12 @@ header img {
     gap: 3em;
     align-items: center;
     justify-content: center;
-    margin: 3em;
+    margin: 2em;
 }
 
 /* Imagen */
 .promo-image img {
-    width: 20em;
+    width: 25em;
     max-width: 100%;
     border-radius: 20px;
     margin-top: 1.5em;
@@ -182,20 +188,20 @@ header img {
     font-weight: 700;
     font-size: 2.5em !important;
     color: #ff1d8e;
-    font-family: 'Shrikhand', sans-serif  !important;
+    font-family: 'Shrikhand', sans-serif !important;
     margin-left: 1em;
 }
 
 /* Subtítulo degradado */
 .promo-texto .degradado {
     font-weight: 600;
-    font-size: 1.5em !important;
-    font-family: 'Shrikhand', sans-serif    !important;
+    font-size: 2.5em !important;
+    font-family: 'Shrikhand', sans-serif !important;
     background: linear-gradient(to right, #ff914d, #d946ef, #7cf9c0);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-left: 2em;
+    margin-left: 2.6em;
 }
 
 /* Párrafo */
@@ -212,11 +218,223 @@ header img {
     margin-left: 5px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, section, div {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box;
-  line-height: 1.6 !important; /* o incluso 1.6 */
-  font-family: 'Dream Orphans', sans-serif !important;
+.carousel-container {
+    min-height: 100vh;
+    align-items: center;
 }
 
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+    background-size: 100% 100%;
+}
+
+.title-image {
+    width: 35em;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.carousel-inner {
+    min-height: 500px;
+    /* o el alto que quieras */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item p {
+    font-size: 1.2em;
+    color: #faf7f8 !important;
+    margin-top: 10px;
+}
+
+.carousel-item h3 {
+    font-size: 1.9em;
+    color: #faf7f8 !important;
+}
+
+.musica {
+    background-color: #faf7f8;
+}
+
+.watercolor {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.reproductores {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+    margin-top: -35em;
+}
+
+.description {
+    margin-top: 15px;
+    font-size: 1.6em;
+    color: #101014;
+    text-align: center;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+/* Responsive */
+@media (max-width: 300px) {
+    .title-image {
+        width: 90%;
+    }
+
+    .watercolor {
+        width: 100%;
+    }
+
+    .reproductores {
+        max-width: 350px;
+    }
+}
+
+.titulo {
+    background: #101014;
+    background: linear-gradient(0deg, rgba(16, 16, 20, 1) 0%, rgba(250, 247, 248, 1) 100%);
+}
+
+.productos-container {
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  width: 100%;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.producto {
+    background: #101014;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.precio {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Bordes de colores */
+.borde-verde {
+    border: 2px solid #57ffd9;
+}
+
+.borde-rosado {
+    border: 2px solid #fe7f50;
+}
+
+.borde-rosa {
+    border: 2px solid #ff1e89;
+}
+
+.borde-morado {
+    border: 2px solid #bf6cfe;
+}
+
+/* Colores de precios */
+.rojo {
+    color: #ff1e89;
+}
+
+.morado {
+    color: #bf6cfe;
+}
+
+.naranja {
+    color: #fe7f50;
+}
+
+.verde {
+    color: #57ffd9;
+}
+
+footer {
+    background-color: #bf6cfe;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 3em;
+}
+
+footer .textos img {
+    width: 5em;
+    height: auto;
+    margin-top: -2em;
+}
+
+footer .textos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -20em;
+}
+
+footer .textos h2 {
+    font-size: 1.8em;
+    color: #faf7f8;
+    margin-top: 10px;
+    font-family: 'Dream Orphans', sans-serif !important;
+    margin-top: -5em;
+}
+
+footer .textos h3 {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #101014;
+    font-family: 'Rosie', sans-serif !important;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+section,
+div {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    line-height: 1.6 !important;
+    /* o incluso 1.6 */
+    font-family: 'Dream Orphans', sans-serif !important;
+}

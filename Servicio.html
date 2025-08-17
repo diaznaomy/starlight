@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight</title>
+    <link rel="icon" href="img/LogoPNG.png" type="image/png">
+    <link rel="stylesheet" href="Menu.css">
+</head>
+
+<body class="">
+    <header class="">
+        <img src="./img/Starlight.png" alt="logo" class="">
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="">
+                <h3>Productos</h3>
+            </a>
+            <a href="Servicio.html">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="">
+                <h3>Contacto</h3>
+            </a>
+            <a href="">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="./img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <div class="flex flex-col items-center justify-center min-h-20 bg-gradient-to-t from-black to-[#ff1d89] gap-3">
+        <div>
+            <div id="connection-status" class="mt-10 text-center p-4">
+                <h3 class="text-black text-2xl font-bold">Estado de Conexión: <span id="connectionStatus"
+                        class="status-disconnected">Desconectado</span></h3>
+            </div>
+            <!-- Authentication Section -->
+            <div id="authSection" class="flex items-center justify-center w-full">
+                <div id="auth-card"
+                    class="bg-gradient-to-b from-purple-400 to-background-dark rounded-xl flex flex-col items-center p-10 gap-5 mb-20 w-full max-w-md shadow-card">
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-2xl font-bold text-white">Conectar con Spotify</h2>
+                    </div>
+                    <p class="text-gray-200 text-center">Para usar este reproductor, necesitas conectarte con tu cuenta
+                        de
+                        <span class="font-semibold text-primary">Spotify Premium</span>.
+                    </p>
+                    <input type="text" id="tokenInput" placeholder="Ingresa tu token de acceso de Spotify"
+                        class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary bg-gray-900 text-white placeholder-gray-400" />
+                    <button id="connectBtn"
+                        class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-[#1ed760] text-black font-semibold py-2 rounded transition-colors duration-200">
+                        <i class="fab fa-spotify"></i>
+                        Conectar
+                    </button>
+                    <div class="token-help text-gray-400 text-sm text-center">
+                        <p>¿No tienes un token? <a href="https://developer.spotify.com/" target="_blank"
+                                class="underline text-primary hover:text-[#1ed760]">Obtenerlo aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Section -->
+        <div id="playerSection"
+            class="player-section flex flex-col items-center justify-center bg-background-card rounded-xl shadow-card p-8 gap-6 w-full max-w-2xl mx-auto mt-10">
+            <!-- Current Track Info -->
+            <div class="flex flex-grow items-center gap-6 content-center ml-18">
+                <div>
+                    <div>
+                        <img src="img/reproductorAqua.png" alt="">
+                        <div class="track-image relative flex-shrink-0 mt-[-290px] mb-16 ml-5 ">
+                            <img id="trackImage" src="img/image.png" alt="Album Art"
+                                class="w-58 h-50 rounded-lg object-cover shadow-card">
+                            <div class="track-overlay absolute inset-0 flex items-end justify-center">
+                                <div class="visualizer flex gap-1 mb-2">
+                                    <div class="bar w-1 h-6 bg-primary animate-pulse"></div>
+                                    <div class="bar w-1 h-4 bg-primary animate-pulse delay-100"></div>
+                                    <div class="bar w-1 h-5 bg-primary animate-pulse delay-200"></div>
+                                    <div class="bar w-1 h-3 bg-primary animate-pulse delay-300"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="current-track flex flex-col md:flex-row items-center gap-6 w-full">
+                        <div class="track-info flex flex-col gap-1 text-white w-full text-base">
+                            <h2 id="trackName" class="text-xl font-bold">Ninguna canción seleccionada</h2>
+                            <h3 id="trackArtist" class="text-lg text-text-secondary">Artista desconocido</h3>
+                            <p id="trackAlbum" class="text-sm text-text-secondary">Álbum desconocido</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-container flex items-center gap-4 w-full mt-4">
+                        <span id="currentTime" class="text-xs text-text-secondary w-10 text-right">0:00</span>
+                        <div class="progress-bar relative flex-1 h-2 bg-gray-700 rounded overflow-hidden">
+                            <div id="progress"
+                                class="progress-fill absolute left-0 top-0 h-2 bg-primary rounded transition-all duration-200"
+                                style="width:0%"></div>
+                            <div id="progressHandle"
+                                class="progress-handle absolute top-1/2 -translate-y-1/2 bg-white border border-primary rounded-full w-4 h-4 cursor-pointer"
+                                style="left:0%"></div>
+                        </div>
+                        <span id="totalTime" class="text-xs text-text-secondary w-10 text-left">0:00</span>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="controls flex items-center justify-center w-full mt-4">
+                        <div class="main-controls flex items-center justify-center gap-6">
+                            <button id="prevBtn"
+                                class="control-btn text-2xl text-white hover:text-accent transition-color">
+                                <i class="fas fa-step-backward"></i>
+                                <img src="img/prev.png" alt="" class="size-10">
+                            </button>
+                            <button id="playPauseBtn"
+                                class="play-btn text-3xl text-white bg-primary rounded-full w-12 h-12 flex items-center justify-center shadow-card hover:bg-accent transition-colors">
+                                <i class="fas fa-play"></i>
+                                <img src="img/right.png" alt="" class="size-10">
+                            </button>
+                            <button id="nextBtn"
+                                class="control-btn text-2xl text-primary hover:text-accent transition-colors">
+                                <i class="fas fa-step-forward"></i>
+                                <img src="img/next.png" alt="" class="size-10">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Volume Control -->
+                <div class="volume-control flex flex-col items-center gap-2 w-12 mt-40">
+                    <i class="fas fa-volume-up text-lg text-text-secondary"></i>
+                    <div class="volume-bar relative h-32 w-3 bg-gray-700 rounded overflow-hidden flex items-end">
+                        <div id="volumeFill"
+                            class="volume-fill absolute bottom-0 left-0 w-3 bg-primary rounded transition-all duration-200"
+                            style="height:50%"></div>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="50"
+                            class="absolute w-full h-full opacity-0 cursor-pointer"
+                            style="writing-mode: bt-lr; -webkit-appearance: slider-vertical;">
+                    </div>
+                    <i class="fas fa-volume-down text-lg text-text-secondary"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div id="searchSection" class="search-section hidden w-full max-w-2xl mx-auto mt-10">
+            <div class="search-header flex flex-col gap-4 items-center">
+                <h3 class="text-xl font-bold text-white">Buscar música</h3>
+                <div class="search-bar flex w-full gap-2">
+                    <input type="text" id="searchInput" placeholder="Buscar canciones, artistas o álbumes..."
+                        class="flex-1 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary bg-gray-900 text-white placeholder-gray-400" />
+                    <button id="searchBtn"
+                        class="bg-primary hover:bg-[#1ed760] text-black font-semibold px-4 py-2 rounded transition-colors duration-200 flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="searchResults" class="search-results mt-6">
+                <!-- Los resultados de búsqueda aparecerán aquí -->
+            </div>
+        </div>
+
+        <!-- Playlists Section -->
+        <div id="playlistsSection" class="playlists-section hidden w-full max-w-2xl mx-auto mt-10">
+            <h3 class="text-xl font-bold text-white mb-4">Tus Playlists</h3>
+            <div id="playlistsList" class="playlists-list grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Las playlists aparecerán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav
+        class="bottom-nav fixed bottom-0 left-0 w-full bg-background-card flex justify-around items-center py-2 shadow-menu z-50">
+        <button id="navPlayer"
+            class="nav-btn active flex flex-col items-center text-primary hover:text-accent transition-colors">
+            <i class="fas fa-play-circle text-2xl"></i>
+            <span class="text-xs">Reproductor</span>
+        </button>
+        <button id="navSearch"
+            class="nav-btn flex flex-col items-center text-text-secondary hover:text-accent transition-colors">
+            <i class="fas fa-search text-2xl"></i>
+            <span class="text-xs">Buscar</span>
+        </button>
+        <button id="navPlaylists"
+            class="nav-btn flex flex-col items-center text-text-secondary hover:text-accent transition-colors">
+            <i class="fas fa-list text-2xl"></i>
+            <span class="text-xs">Playlists</span>
+        </button>
+    </nav>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay"
+        class="loading-overlay hidden fixed inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center z-50">
+        <div class="spinner border-4 border-primary border-t-transparent rounded-full w-12 h-12 animate-spin mb-4">
+        </div>
+        <p class="text-white font-semibold">Cargando...</p>
+    </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="Servicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+
+</html>

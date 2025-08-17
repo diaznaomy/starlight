@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'Dream Orphans';
+    src: url(./Fonts/Dream\ Orphans.otf);
+}
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url(./Fonts/Shrikhand-Regular.ttf);
+}
+
+
+body {
+    background-color: #101014;
+    color: white;
+    font-family: 'Dream Orphans', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+header img {
+    width: 25em;
+    height: auto;
+    margin-top: 3.5em;
+}
+
+/* ------------------- */
+/* Menu */
+/* ------------------- */
+
+/* ----------- ESTILO GENERAL ----------- */
+#menu {
+    background: #ff1d89;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-top: 4em;
+    flex-direction: row;
+
+    h3{
+        box-sizing: border-box;
+    font-family: 'Dream Orphans', sans-serif !important;
+    }
+}
+
+#burger {
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+    order: 3;
+    margin-left: auto;
+}
+
+#burger img {
+    width: 2.3em;
+}
+
+#navmenu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#navmenu a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    border-radius: 0.5em;
+}
+
+#navmenu a:hover {
+    transform: scale(1.05);
+    background-color: #ff7f50;
+    color: #faf7f8;
+}
+
+
+/* Espaciador opcional */
+#espaciador {
+    width: 20px;
+}
+
+/* ----------- ANIMACIONES ----------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 768px) {
+    #burger {
+        display: block;
+    }
+
+    #navmenu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    #navmenu.active {
+        display: flex;
+        background: rgba(255, 25, 140, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    #espaciador {
+        display: none;
+    }
+}
+
+#menu,
+#navmenu a {
+    font-family: 'dream-orphans', sans-serif;
+}
+/* Fin Menu */

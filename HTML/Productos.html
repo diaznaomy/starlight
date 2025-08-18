@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+
     <link rel="stylesheet" href="../CSS/Productos.css">
 </head>
 
@@ -21,7 +22,7 @@
             <a href="./HTML/Productos.html">
                 <h3>Productos</h3>
             </a>
-            <a href="">
+            <a href="./Servicios.html">
                 <h3>Servicios</h3>
             </a>
             <a href="">
@@ -38,9 +39,89 @@
         <div id="espaciador"></div>
 
         <div id="burger">
-            <img src="./img/menu.png" alt="menu" id="burgerIcon">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
         </div>
     </nav>
+
+    <main>
+        <div class="mask-section">
+            <div class="mask-images">
+                <img src="../img/promo.gif" alt="Productos de máscara">
+            </div>
+            <div class="mask-text">
+                <h2>✨ ¡Brilla como nunca con la merch oficial de Starlight! ✨</h2>
+                <p>Lleva contigo la magia de Starlight en cada momento. 🌌 Nuestra colección está diseñada para fans que
+                    quieren lucir con estilo y sentirse parte del universo que tanto aman.</p>
+                <button>Compra ahora</button>
+            </div>
+        </div>
+
+        <h2>Merch nueva</h2>
+        <div class="productos">
+            
+            <div class="producto borde-verde">
+                <img src="../img/Merch/bratzXkornFront.png" alt="Korn x Bratz">
+                <h3>Slipknot girly</h3>
+                    <p class="precio rojo">₡10.000</p>
+            </div>
+
+            <div class="producto borde-rosado">
+                <img src="./img/Merch/sillyPeppersFront.png" alt="Pink Pony Club">
+                <h3>Silly Peppers</h3>
+                <p class="precio morado">₡10.000</p>
+            </div>
+
+            <div class="producto borde-rosa">
+                <img src="./img/Merch/meowtallicaBack.png" alt="Daddy I love him">
+                <h3>Meowtallica</h3>
+                <p class="precio naranja">₡12.000</p>
+            </div>
+
+            <div class="producto borde-morado">
+                <img src="./img/Merch/sanrioXchem1.png" alt="Deftones Cat">
+                <h3>Sanrio x My Chemical Romance</h3>
+                <p class="precio verde">₡8.000</p>
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="textos">
+                <h2 id="titulo">Gracias por visitar</h2>
+                <img src="../img/LogoPNG.png" alt="">
+                <h3>Starlight</h3>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+            <script>
+                new CircleType(document.getElementById('titulo')).radius(190);
+            </script>
+
+            <p>© 2025 Todos los derechos reservados.</p>
+        </footer>
+    </main>
+
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
 </body>
 
 </html>

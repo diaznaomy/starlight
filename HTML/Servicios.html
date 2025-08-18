@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #101014;
+        }
+    </style>
+    <link rel="stylesheet" href="../CSS/Servicios.css">
+</head>
+
+<body class="text-white font-sans">
+    <header>
+        <img src="../img/Starlight.png" alt="logo">
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="../index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="./Productos.html">
+                <h3>Productos</h3>
+            </a>
+            <a href="">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="">
+                <h3>Contacto</h3>
+            </a>
+            <a href="">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <!-- Hero principal -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
+        style="background: linear-gradient(180deg, #101014 0%, #FF1D89 100%);">
+        <h1>✨ Starlight Music</h1>
+        <p>
+            Tu música favorita, en un solo lugar. Sin límites. Sin anuncios.
+        </p>
+        <br>
+        <a href="#planes" class="px-8 py-4 rounded-2xl font-semibold shadow-lg transition"
+            style="background-color:#57FFD9; color:#101014;">
+            Empieza a escuchar
+        </a>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="py-20 px-6 bg-[#FF1D89]">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[#FAF7F8]">¿Por qué elegir Starlight?</h2>
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div class="p-6 rounded-2xl shadow-lg text-center" style="background-color:#C06CFF;">
+                <h3 class="text-xl font-semibold mb-4 text-[#101014]">🎧 Millones de canciones</h3>
+                <p class="text-[#FAF7F8]">Descubre playlists y artistas personalizados para ti.</p>
+            </div>
+            <div class="p-6 rounded-2xl shadow-lg text-center" style="background-color:#57FFD9;">
+                <h3 class="text-xl font-semibold mb-4 text-[#101014]">📱 En cualquier dispositivo</h3>
+                <p class="text-[#101014]">Disponible en tu smartphone, laptop y más.</p>
+            </div>
+            <div class="p-6 rounded-2xl shadow-lg text-center" style="background-color:#FF7F50;">
+                <h3 class="text-xl font-semibold mb-4">🌙 Sin anuncios</h3>
+                <p class="text-[#FAF7F8]">Disfruta música sin interrupciones, solo flow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes" class="py-20 px-6" style="background: linear-gradient(180deg, #FF1D89 0%, #57FFD9 100%);">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[#FAF7F8]">Elige tu plan</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+            <div class="p-8 rounded-2xl text-center shadow-lg border"
+                style="background-color:#101014; border-color:#FF1D89;">
+                <h3 class="text-xl font-semibold mb-4 text-[#FAF7F8]">Gratis</h3>
+                <p class="text-3xl font-bold mb-4 text-[#FF1D89]">$0</p>
+                <p class="text-[#FAF7F8] mb-6">Con anuncios, saltos limitados</p>
+                <a href="#" class="px-6 py-3 rounded-xl transition" style="background-color:#FF1D89; color:#FAF7F8;">
+                    Elegir
+                </a>
+            </div>
+
+            <div class="p-8 rounded-2xl text-center shadow-xl scale-105 border-2"
+                style="background-color:#C06CFF; border-color:#57FFD9;">
+                <h3 class="text-xl font-semibold mb-4 text-[#101014]">Premium Individual ⭐</h3>
+                <p class="text-3xl font-bold mb-4 text-[#101014]">$6.99/mes</p>
+                <p class="text-[#101014] mb-6">Música sin anuncios, descargas offline</p>
+                <a href="#" class="px-6 py-3 rounded-xl transition" style="background-color:#57FFD9; color:#101014;">
+                    Elegir
+                </a>
+            </div>
+
+            <div class="p-8 rounded-2xl text-center shadow-lg border"
+                style="background-color:#101014; border-color:#FF7F50;">
+                <h3 class="text-xl font-semibold mb-4 text-[#FAF7F8]">Familiar</h3>
+                <p class="text-3xl font-bold mb-4 text-[#FF7F50]">$10.99/mes</p>
+                <p class="text-[#FAF7F8] mb-6">Hasta 6 cuentas, playlists compartidas</p>
+                <a href="#" class="px-6 py-3 rounded-xl transition" style="background-color:#FF7F50; color:#101014;">
+                    Elegir
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 px-6 bg-[#57FFD9] text-center">
+        <h2 class="text-4xl font-bold mb-6 text-[#101014]">Tu música, tu mundo 🎶</h2>
+        <p class="text-lg text-[#101014] mb-8">Únete a la experiencia Starlight y lleva la música contigo.</p>
+        <a href="#planes" class="px-10 py-4 rounded-2xl font-semibold shadow-lg transition"
+            style="background-color:#FF1D89; color:#FAF7F8;">
+            Suscribirme
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="textos">
+            <h2 id="titulo">Gracias por visitar</h2>
+            <img src="../img/LogoPNG.png" alt="">
+            <h3>Starlight</h3>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+        <script>
+            new CircleType(document.getElementById('titulo')).radius(190);
+        </script>
+
+        <p>© 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+</body>
+
+</html>

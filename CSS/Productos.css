@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Dream Orphans';
-    src: url(./Fonts/Dream\ Orphans.otf);
+    src: url(../Fonts/Dream\ Orphans.otf);
 }
 
 @font-face {
     font-family: 'Shrikhand';
-    src: url(./Fonts/Shrikhand-Regular.ttf);
+    src: url(../Fonts/Shrikhand-Regular.ttf);
 }
 
 @font-face {
     font-family: 'Rosie';
-    src: url(./Fonts/Rosie\ Brown\ Serif\ Demo.otf);
+    src: url(../Fonts/Rosie\ Brown\ Serif\ Demo.otf);
 }
 
 * {
@@ -86,8 +86,8 @@ header img {
 
 #navmenu a {
     text-decoration: none;
-    color: black;
-    font-size: 1.5em;
+    color: #101014;
+    font-size: 0.9em !important;
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
@@ -158,3 +158,140 @@ header img {
 }
 
 /* Fin Menu */
+
+
+.mask-section {
+    display: flex;
+    background: linear-gradient(to right, #ff1d89, #57ffd9);
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 2em;
+    overflow: hidden;
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mask-images {
+    display: flex;
+}
+
+.mask-images img {
+    width: 40em;
+    height: auto;
+    object-fit: cover;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+.mask-text {
+    flex: 1;
+    padding: 30px;
+    color: white;
+}
+
+.mask-text h2 {
+    font-size: 28px;
+    color: #101014;
+    margin-bottom: 15px;
+}
+
+.mask-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.mask-text button {
+    background-color: #ff1d89;
+    color: #101014;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.mask-text button:hover {
+    background-color: #57ffd9;
+}
+
+h2 {
+    font-family: 'Rosie', sans-serif !important;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    font-size: 2.5em;
+    justify-self: center;
+}
+
+.productos-container {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    width: 100%;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.producto {
+    background: #101014;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+}
+
+footer {
+    background-color: #bf6cfe;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 3em;
+}
+
+footer .textos img {
+    width: 5em;
+    height: auto;
+    margin-top: -2em;
+}
+
+footer .textos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .textos h2 {
+    font-size: 1.8em;
+    color: #faf7f8;
+    margin-top: 10px;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+footer .textos h3 {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #101014;
+    font-family: 'Rosie', sans-serif !important;
+}

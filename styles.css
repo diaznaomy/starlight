@@ -86,9 +86,9 @@ header img {
 
 #navmenu a {
     text-decoration: none;
-    color: black;
-    font-size: 1.5em;
-    font-weight: bold;
+    color: #101014;
+    font-size: 3em !important;
+    font-weight: bold !important;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }

@@ -81,11 +81,16 @@
             <!-- Current Track Info -->
             <div class="flex flex-grow items-center gap-6 content-center ml-18">
                 <div>
-                    <div>
-                        <img src="img/reproductorAqua.png" alt="">
-                        <div class="track-image relative flex-shrink-0 mt-[-290px] mb-16 ml-5 ">
+                    <div class="relative w-full max-w-md mx-auto">
+                        <!-- Background image (the player) -->
+                        <img src="img/reproductorAqua.png" alt="" class="w-full h-auto">
+
+                        <!-- Track cover -->
+                        <div class="track-image absolute top-[10%] left-[4%] w-[46%]">
                             <img id="trackImage" src="img/image.png" alt="Album Art"
-                                class="w-58 h-50 rounded-lg object-cover shadow-card">
+                                class="w-full h-auto rounded-lg object-cover shadow-card">
+
+                            <!-- Visualizer overlay -->
                             <div class="track-overlay absolute inset-0 flex items-end justify-center">
                                 <div class="visualizer flex gap-1 mb-2">
                                     <div class="bar w-1 h-6 bg-primary animate-pulse"></div>
@@ -119,7 +124,7 @@
                     </div>
 
                     <!-- Controls -->
-                    <div class="controls flex items-center justify-center w-full mt-4">
+                    <div class="controls flex items-center justify-center w-full mt-4 ml-3">
                         <div class="main-controls flex items-center justify-center gap-6">
                             <button id="prevBtn"
                                 class="control-btn text-2xl text-white hover:text-accent transition-color">

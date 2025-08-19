@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #101014;
+            color: #FAF7F8;
+        }
+
+        label {
+            font-weight: 600;
+        }
+    </style>
+    <link rel="stylesheet" href="../CSS/Servicios.css">
+</head>
+
+<body class="font-sans">
+
+    <!-- HEADER -->
+    <header>
+        <img src="../img/Starlight.png" alt="logo">
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="../index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="./Productos.html">
+                <h3>Productos</h3>
+            </a>
+            <a href="./Servicios.html">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="./Contacto.html">
+                <h3>Contacto</h3>
+            </a>
+            <a href="">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <!-- INFO DE CONTACTO -->
+    <section class="py-12 px-6 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+        <div class="p-6 rounded-xl shadow-lg animate__animated animate__zoomInLeft animate__slower" style="background: #57FFD9;
+background: linear-gradient(90deg,rgba(87, 255, 217, 1) 0%, rgba(192, 108, 255, 1) 100%);">
+            <h2 class="text-xl font-semibold mb-2">📞 Teléfono</h2>
+            <br>
+            <p>+506 2222-3333</p>
+        </div>
+        <div class="p-6 rounded-xl shadow-lg animate__animated animate__zoomInDown animate__slower" style="background: #C06CFF;
+background: linear-gradient(90deg, rgba(192, 108, 255, 1) 0%, rgba(255, 29, 137, 1) 100%);">
+            <h2 class="text-xl font-semibold mb-2">📍 Dirección</h2>
+            <br>
+            <p>Poás, Alajuela, Costa Rica</p>
+        </div>
+        <div class="p-6 rounded-xl shadow-lg animate__animated animate__zoomInRight animate__slower" style="background: #FF1D89;
+background: linear-gradient(90deg, rgba(255, 29, 137, 1) 0%, rgba(255, 127, 80, 1) 100%);">
+            <h2 class="text-xl font-semibold mb-2">⏰ Horarios</h2>
+            <p>Lunes - Viernes: 8:00am - 6:00pm</p>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="py-12 px-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">Nuestra ubicación</h2>
+        <iframe class="w-full h-80 rounded-2xl shadow-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.102871621342!2d-84.09072438520713!3d9.928069692902923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e31d1d8e3b3f%3A0xe9e6e3dbaee2bb77!2sSan%20Jos%C3%A9!5e0!3m2!1ses!2scr!4v1670000000000!5m2!1ses!2scr"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="py-12 px-6 max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">Formulario de contacto</h2>
+        <form id="contactForm" class="p-8 rounded-2xl shadow-lg space-y-6 text-[#101014]" style="background: #FF1D89;
+background: radial-gradient(circle, rgba(255, 29, 137, 1) 9%, rgba(87, 255, 217, 1) 100%);">
+
+            <!-- Nombre -->
+            <div>
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required class="w-full p-3 rounded-lg mt-1">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg mt-1">
+            </div>
+
+            <!-- Fecha nacimiento -->
+            <div>
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" required class="w-full p-3 rounded-lg mt-1">
+            </div>
+
+            <!-- Género -->
+            <div>
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required class="w-full p-3 rounded-lg mt-1">
+                    <option value="">Seleccione</option>
+                    <option>Femenino</option>
+                    <option>Masculino</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+
+            <!-- Campos adicionales -->
+            <div>
+                <label for="motivo">Motivo de contacto:</label>
+                <select id="motivo" name="motivo" required class="w-full p-3 rounded-lg mt-1">
+                    <option value="">Seleccione</option>
+                    <option>Soporte técnico</option>
+                    <option>Facturación</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="pedido">Número de pedido:</label>
+                <input type="text" id="pedido" name="pedido" required class="w-full p-3 rounded-lg mt-1">
+            </div>
+
+            <div>
+                <label for="consulta">Tipo de consulta:</label>
+                <input type="text" id="consulta" name="consulta" required class="w-full p-3 rounded-lg mt-1">
+            </div>
+
+            <!-- CAPTCHA Fake -->
+            <div class="flex items-center space-x-3">
+                <input type="checkbox" id="captcha" required>
+                <label for="captcha">No soy un robot 🤖</label>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit" class="w-full py-3 rounded-xl font-bold"
+                style="background-color:#57FFD9; color:#101014;">
+                Enviar
+            </button>
+        </form>
+
+        <!-- Resumen -->
+        <div id="resumen" class="hidden mt-10 p-6 rounded-xl text-[#101014]" style="background-color:#FF7F50;">
+            <h3 class="text-xl font-bold mb-4">📋 Resumen de datos enviados:</h3>
+            <ul id="resumenLista" class="space-y-2"></ul>
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById("contactForm");
+        const resumen = document.getElementById("resumen");
+        const lista = document.getElementById("resumenLista");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            lista.innerHTML = "";
+            const datos = new FormData(form);
+            datos.forEach((valor, clave) => {
+                const li = document.createElement("li");
+                li.textContent = `${clave}: ${valor}`;
+                lista.appendChild(li);
+            });
+            resumen.classList.remove("hidden");
+            form.reset();
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="textos">
+            <h2 id="titulo">Gracias por visitar</h2>
+            <img src="../img/LogoPNG.png" alt="">
+            <h3>Starlight</h3>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+        <script>
+            new CircleType(document.getElementById('titulo')).radius(190);
+        </script>
+
+        <p>© 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+</body>
+
+</html>

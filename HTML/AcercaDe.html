@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="../CSS/AcercaDe.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../img/Starlight.png" alt="logo">
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="../index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="./Productos.html">
+                <h3>Productos</h3>
+            </a>
+            <a href="./Servicios.html">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="./Contacto.html">
+                <h3>Contacto</h3>
+            </a>
+            <a href="">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <main>
+        <h1>Autores de</h1>
+        <h3><span class="degradado">Starlight</span></h3>
+
+        <div class="container">
+            <!-- Autor 1 -->
+            <div class="card">
+                <img src="../img/Autor1.png" alt="Foto Autor 1">
+                <div class="name">
+                    <h2>¡Holi! soy</h2>
+                    <br>
+                    <h2>Naomy Daniela Loría Díaz</h2>
+                    <br>
+                </div>
+                <div class="info">
+                    <p>🌟 Mi experiencia en Starlight refleja mi interés en unir la programación con lo visual y lo
+                        creativo, desarrollando no solo software funcional, sino también proyectos que transmiten mi
+                        identidad. </p>
+                </div>
+                <div class="description">
+                    <br>
+                    <p><span class="highlight2">Cédula:</span> 208660004</p>
+                    <br>
+                    <p><span class="highlight2">Correo:</span> naomyla1@email.com</p>
+                    <br>
+                </div>
+            </div>
+
+            <!-- Autor 2 -->
+            <div class="card2">
+                <img src="../img/Autor2.png" alt="Foto Autor 1">
+                <div class="name2">
+                    <h2>¡Hola! soy</h2>
+                    <br>
+                    <h2>Neitan Daniel Morales Conejo</h2>
+                    <br>
+                </div>
+                <div class="info2">
+                    <p>🌟 Mi experiencia en Starlight refleja mi interés en unir la programación con lo visual y lo
+                        creativo, desarrollando no solo software funcional, sino también proyectos que transmiten mi
+                        identidad. </p>
+                </div>
+                <div class="description2">
+                    <br>
+                    <p><span class="highlight2">Cédula:</span> 208540596</p>
+                    <br>
+                    <p><span class="highlight2">Correo:</span> theneytan17@gmail.com</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <h1>¿Cómo nació</h1>
+        <h3><span class="degradado">Starlight?</span></h3>
+
+        <div class="container2">
+            <p>
+                Starlight nació de una idea compartida entre mi compañero y yo, inspirada por nuestra pasión por la
+                música y sus infinitos géneros. Siempre hemos sentido que la música nos conecta y nos define, y
+                justamente fue esa afinidad la que nos motivó a pensar en crear algo diferente, algo que pudiera
+                reflejar lo que sentimos y a la vez llegar a personas que, como nosotros, buscan salirse de lo común.
+            </p>
+            <p>
+                Lo que inició todo fue una frase que dijimos casi de broma, pero que terminó marcándolo todo:
+                <span class="highlight">“Qué pereza hacer lo mismo que los demás”.</span>
+            </p>
+            <p>
+                El nombre <span class="highlight">Starlight</span> surgió de una coincidencia muy especial: varios de
+                nuestros artistas favoritos tienen una canción con ese título. Nos pareció un guiño perfecto a lo que
+                nos une y una manera de rendir homenaje a la música que nos inspira día a día.
+            </p>
+            <p>
+                Otra parte súper importante fue la <span class="highlight">paleta de colores</span>. Decidimos que
+                queríamos algo arriesgado, que no se viera como lo típico, y terminamos inspirándonos en las variantes
+                de colores que tenían los cassettes de antes. Esa vibra retro mezclada con lo moderno nos pareció
+                increíble, y sentimos que le daba un sello único al proyecto.
+            </p>
+            <p>
+                En resumen, Starlight nació de nuestra pasión por la música, de las ganas de hacer algo distinto y de
+                compartir esa vibra con personas que sienten lo mismo que nosotros. 🌌✨
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="textos">
+            <h2 id="titulo">Gracias por visitar</h2>
+            <img src="../img/LogoPNG.png" alt="">
+            <h3>Starlight</h3>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+        <script>
+            new CircleType(document.getElementById('titulo')).radius(190);
+        </script>
+
+        <p>© 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+</body>
+
+</html>

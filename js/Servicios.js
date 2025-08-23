@@ -34,11 +34,13 @@ class SpotifyPlayer {
         this.trackAlbum = document.getElementById('trackAlbum');
         this.trackGenres = document.getElementById('trackGenres');
         this.genresList = document.getElementById('genresList');
+        this.iconPlayer = document.getElementById('iconReproductor');
 
         // Controls
         this.playPauseBtn = document.getElementById('playPauseBtn');
         this.prevBtn = document.getElementById('prevBtn');
         this.nextBtn = document.getElementById('nextBtn');
+        this.iconPlayPause = document.getElementById('playPauseIcon');
 
         // Progress
         this.progressBar = document.querySelector('.progress-bar');
@@ -275,10 +277,11 @@ class SpotifyPlayer {
         playlists.forEach(playlist => {
             const playlistElement = document.createElement('div');
             playlistElement.className = 'playlist-item';
-            playlistElement.innerHTML = `
+            playlistElement.innerHTML = `<div class="cursor-pointer hover:scale-105 transition-transform">
                 <img src="${playlist.images[0]?.url || 'https://via.placeholder.com/250x250?text=Playlist'}" alt="${playlist.name}">
                 <h4>${playlist.name}</h4>
                 <p>${playlist.tracks.total} canciones</p>
+                </div>
             `;
 
             playlistElement.addEventListener('click', () => {
@@ -291,8 +294,6 @@ class SpotifyPlayer {
 
     async playPlaylist(playlistId) {
         try {
-            this.showLoading(true);
-
             await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${this.deviceId}`, {
                 method: 'PUT',
                 body: JSON.stringify({
@@ -303,9 +304,6 @@ class SpotifyPlayer {
                     'Authorization': `Bearer ${this.accessToken}`
                 }
             });
-
-            this.showSection('player');
-            this.showLoading(false);
         } catch (error) {
             console.error('Error playing playlist:', error);
             this.showError('Error al reproducir la playlist');
@@ -365,7 +363,6 @@ class SpotifyPlayer {
 
     async playTrack(trackUri) {
         try {
-            this.showLoading(true);
 
             await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${this.deviceId}`, {
                 method: 'PUT',
@@ -377,9 +374,6 @@ class SpotifyPlayer {
                     'Authorization': `Bearer ${this.accessToken}`
                 }
             });
-
-            this.showSection('player');
-            this.showLoading(false);
         } catch (error) {
             console.error('Error playing track:', error);
             this.showError('Error al reproducir la canción');
@@ -447,8 +441,12 @@ class SpotifyPlayer {
         const playIcon = this.playPauseBtn.querySelector('i');
         if (this.isPlaying) {
             playIcon.className = 'fas fa-pause';
+            this.iconPlayPause.src = '../img/right.png';
+            this.iconPlayer.src = '../img/reproductorAqua.gif';
         } else {
             playIcon.className = 'fas fa-play';
+            this.iconPlayPause.src = '../img/pause.png';
+            this.iconPlayer.src = '../img/reproductorAquaPng.png';
         }
         // Update progress
         if (this.duration > 0) {
@@ -497,7 +495,6 @@ class SpotifyPlayer {
         // Show selected section and activate nav button
         switch (section) {
             case 'player':
-                this.playerSection.classList.remove('hidden');
                 this.navPlayer.classList.add('active');
                 break;
             case 'search':

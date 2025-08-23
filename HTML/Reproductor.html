@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div id="player" class="flex flex-row w-full gap-6 max-w-[90%] mx-auto hidden">
+        <div id="player" class="flex flex-row w-full gap-6 max-w-[90%] mx-auto  mb-20 hidden">
             <!-- Search Section -->
             <div id="searchSection" class="search-section w-full max-w-2xl mx-auto mt-10">
                 <div class="search-header flex flex-col gap-4 items-baseline m-4">
@@ -100,12 +100,12 @@
                 <!-- Current Track Info -->
                 <div>
                     <div class="relative w-full max-w-md mx-auto">
-                        <!-- Background image (the player) -->
-                        <img src="img/reproductorAqua.png" alt="" class="w-full h-auto">
+                        <!-- Background image -->
+                        <img src="../img/reproductorAquaPng.png" alt="" class="w-full h-auto" id="iconReproductor">
 
                         <!-- Track cover -->
-                        <div class="track-image absolute top-[10%] left-[4%] w-[46%]">
-                            <img id="trackImage" src="img/image.png" alt="Album Art"
+                        <div class="track-image absolute top-[20%] left-[6%] w-[44%]">
+                            <img id="trackImage" src="../img/image.png" alt="Album Art"
                                 class="w-full h-auto rounded-lg object-cover shadow-card">
 
                             <!-- Visualizer overlay -->
@@ -148,31 +148,31 @@
                     <div class="controls flex items-center justify-center w-full mt-4 ml-3">
                         <div class="main-controls flex items-center justify-center gap-6">
                             <button id="prevBtn"
-                                class="control-btn text-2xl text-white hover:text-accent transition-color">
+                                class="control-btn rounded-full items-center hover:scale-115 transition-transform hover:bg-[#ff1d89]">
                                 <i class="fas fa-step-backward"></i>
-                                <img src="img/prev.png" alt="" class="size-10">
+                                <img src="../img/prev.png" alt="" class="size-10">
                             </button>
                             <button id="playPauseBtn"
-                                class="play-btn text-3xl text-white bg-primary rounded-full w-12 h-12 flex items-center justify-center shadow-card hover:bg-accent transition-colors">
+                                class="play-btn rounded-full items-center hover:scale-115 transition-transform hover:bg-[#ff1d89]">
                                 <i class="fas fa-play"></i>
-                                <img src="img/right.png" alt="" class="size-10">
+                                <img src="../img/right.png" alt="" class="size-10" id="playPauseIcon">
                             </button>
                             <button id="nextBtn"
-                                class="control-btn text-2xl text-primary hover:text-accent transition-colors">
-                                <i class="fas fa-step-forward"></i>
-                                <img src="img/next.png" alt="" class="size-10">
+                                    class="control-btn rounded-full items-center hover:scale-115 transition-transform hover:bg-[#ff1d89]">
+                                    <i class="fas fa-step-forward"></i>
+                                <img src="../img/next.png" alt="" class="size-10">
                             </button>
                         </div>
                     </div>
                     <!-- Volume Control -->
                     <div class="controls flex items-center justify-center w-full mt-4 ml-3">
                         <div class="w-64 mb-4 flex items-center gap-3">
-                            <img src="img/volume.png" alt="" class="size-6">
+                            <img src="../img/volume.png" alt="" class="size-6">
                             <input type="range" id="volumeSlider" min="0" max="100" value="50"
                                 class="flex-1 h-2 accent-pink-500 bg-slate-200 rounded-full appearance-none"
                                 style="background: linear-gradient(to right, #ff1d89 50%, #e5e7eb 50%);">
                             <div class="hidden"></div>
-                            <img src="img/volume.png" alt="" class="size-6" style="opacity: 0; visibility: hidden;">
+                            <img src="../img/volume.png" alt="" class="size-6" style="opacity: 0; visibility: hidden;">
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
 
             <!-- Playlists Section -->
             <div id="playlistsSection" class="playlists-section w-full max-w-2xl mx-auto mt-10">
-                <h3 class="text-xl font-bold text-white mb-4">Tus Playlists</h3>
+                <h3 class="text-xl font-bold text-white mb-4 ">Tus Playlists</h3>
                 <div id="playlistsList" class="playlists-list grid grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- Las playlists aparecerán aquí -->
                 </div>
@@ -241,7 +241,7 @@
             navMenu.classList.toggle('active');
 
             // Cambiar ícono
-            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+            burgerIcon.src = menuOpen ? "../img/close.png" : "../img/menu.png";
         });
 
         // Cierra el menú al hacer clic en un enlace (solo en mobile)

@@ -24,6 +24,8 @@ class SpotifyPlayer {
         this.connectionStatus = document.getElementById('connectionStatus');
         this.authSection = document.getElementById('authSection');
         this.playerSection = document.getElementById('playerSection');
+        this.playerStart = document.getElementById('player');
+        this.Status = document.getElementById('connection-status');
 
         // Player elements
         this.trackImage = document.getElementById('trackImage');
@@ -86,6 +88,11 @@ class SpotifyPlayer {
         // Volume control
         this.volumeSlider.addEventListener('input', (e) => this.setVolume(e.target.value));
 
+        volumeSlider.addEventListener('input', function () {
+            const value = this.value;
+            updateSliderBg(value);
+        });
+
         // Navigation
         this.navPlayer.addEventListener('click', () => this.showSection('player'));
         this.navSearch.addEventListener('click', () => this.showSection('search'));
@@ -110,6 +117,7 @@ class SpotifyPlayer {
 
         this.accessToken = token;
         this.showLoading(true);
+
 
         try {
             // Initialize Spotify Web Playback SDK
@@ -200,8 +208,7 @@ class SpotifyPlayer {
 
     updateConnectionStatus() {
         if (this.isConnected) {
-            this.connectionStatus.textContent = 'Conectado';
-            this.connectionStatus.className = 'status-connected';
+            this.Status.className = 'hidden';
         } else {
             this.connectionStatus.textContent = 'Desconectado';
             this.connectionStatus.className = 'status-disconnected';
@@ -210,12 +217,13 @@ class SpotifyPlayer {
 
     showPlayerInterface() {
         this.authSection.classList.add('hidden');
-        this.playerSection.classList.remove('hidden');
+        this.playerStart.classList.remove('hidden');
     }
 
     async loadUserData() {
         try {
             await this.loadPlaylists();
+            await this.loadTopTracks();
         } catch (error) {
             console.error('Error loading user data:', error);
         }
@@ -235,6 +243,29 @@ class SpotifyPlayer {
             this.displayPlaylists(data.items);
         } catch (error) {
             console.error('Error loading playlists:', error);
+        }
+    }
+
+    async loadTopTracks() {
+        const query = "Starlight";
+        if (!query) return;
+
+        try {
+            const response = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=20`, {
+                headers: {
+                    'Authorization': `Bearer ${this.accessToken}`
+                }
+            });
+
+            if (!response.ok) throw new Error('Search failed');
+
+            const data = await response.json();
+            this.displaySearchResults(data.tracks.items);
+            this.showLoading(false);
+        } catch (error) {
+            console.error('Search error:', error);
+            this.showError('Error en la búsqueda');
+            this.showLoading(false);
         }
     }
 
@@ -310,14 +341,16 @@ class SpotifyPlayer {
     displaySearchResults(tracks) {
         this.searchResults.innerHTML = '';
 
-        tracks.forEach(track => {
+        tracks.slice(0, 4).forEach(track => {
             const trackElement = document.createElement('div');
             trackElement.className = 'search-item';
-            trackElement.innerHTML = `
-                <img src="${track.album.images[2]?.url || 'https://via.placeholder.com/60x60?text=Track'}" alt="${track.name}">
-                <div class="search-item-info">
-                    <h4>${track.name}</h4>
-                    <p>${track.artists.map(artist => artist.name).join(', ')} • ${track.album.name}</p>
+            trackElement.innerHTML = `<div class="bg-[#57FFD9] p-4 rounded-lg m-4 flex flex-row items-center gap-4 hover:bg-[#ff1d89] cursor-pointer">
+                <img src="${track.album.images[2]?.url || 'https://via.placeholder.com/60x60?text=Track'}" alt="${track.name}" class="rounded-lg">
+                <div class="search-item-info text-black text-wrap">
+                    <h1><strong>${track.name}</strong></h1>
+                    <p>${track.artists.map(artist => artist.name)}</p>
+                    <p>${track.album.name}</p>
+                </div>
                 </div>
             `;
 
@@ -328,6 +361,7 @@ class SpotifyPlayer {
             this.searchResults.appendChild(trackElement);
         });
     }
+
 
     async playTrack(trackUri) {
         try {
@@ -373,12 +407,13 @@ class SpotifyPlayer {
 
     setVolume(volume) {
         this.volume = parseInt(volume);
-        this.volumeFill.style.width = `${this.volume}%`;
 
         if (this.player) {
             this.player.setVolume(this.volume / 100);
         }
+        updateSliderBg(this.volume);
     }
+
 
     seekToPosition(event) {
         if (!this.duration) return;
@@ -415,12 +450,12 @@ class SpotifyPlayer {
         } else {
             playIcon.className = 'fas fa-play';
         }
-
         // Update progress
         if (this.duration > 0) {
             const progressPercent = (this.position / this.duration) * 100;
             this.progressFill.style.width = `${progressPercent}%`;
             this.progressHandle.style.left = `${progressPercent}%`;
+            this.progressBar.style.background = `linear-gradient(to right, #ff1d89 ${progressPercent}%, #e5e7eb ${progressPercent}%)`;
         }
 
         // Update time displays
@@ -521,3 +556,8 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onSpotifyWebPlaybackSDKReady = () => {
     console.log('Spotify Web Playback SDK is ready');
 };
+
+function updateSliderBg(value) {
+    volumeSlider.style.background = `linear-gradient(to right, #ff1d89 ${value}%, #e5e7eb ${value}%)`;
+}
+

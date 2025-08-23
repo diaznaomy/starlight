@@ -1,0 +1,362 @@
+@font-face {
+    font-family: 'Dream Orphans';
+    src: url(../Fonts/Dream\ Orphans.otf);
+}
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url(../Fonts/Shrikhand-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Rosie';
+    src: url(../Fonts/Rosie\ Brown\ Serif\ Demo.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+body {
+    background: #101014;
+    background: linear-gradient(180deg, rgba(16, 16, 20, 1) 69%, rgba(255, 29, 137, 1) 88%);
+    color: white;
+    font-family: 'Dream Orphans', sans-serif !important;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+header img {
+    width: 25em;
+    height: auto;
+    margin-top: 3.5em;
+}
+
+/* ------------------- */
+/* Menu */
+/* ------------------- */
+
+/* ----------- ESTILO GENERAL ----------- */
+#menu {
+    background: #ff1d89;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-top: 4em;
+    flex-direction: row;
+}
+
+#burger {
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+    order: 3;
+    margin-left: auto;
+}
+
+#burger img {
+    width: 2.3em;
+    align-self: right;
+}
+
+#navmenu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#navmenu a {
+    text-decoration: none;
+    color: #101014;
+    font-size: 1em !important;
+    font-weight: bold !important;
+    transition: transform 0.3s ease;
+    border-radius: 0.5em;
+}
+
+#navmenu a:hover {
+    transform: scale(1.05);
+    background-color: #ff7f50;
+    color: #faf7f8;
+}
+
+
+/* Espaciador opcional */
+#espaciador {
+    width: 20px;
+}
+
+/* ----------- ANIMACIONES ----------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 768px) {
+    #burger {
+        display: block;
+    }
+
+    #navmenu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    #navmenu.active {
+        display: flex;
+        background: rgba(255, 25, 140, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    #espaciador {
+        display: none;
+    }
+}
+
+#menu,
+#navmenu a {
+    font-family: 'dream-orphans', sans-serif;
+}
+
+/* Fin Menu */
+
+h1,
+h4,
+h5 {
+    font-family: 'Dream Orphans', sans-serif !important;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: -1.5em;
+}
+
+.degradado {
+    font-weight: 600;
+    font-size: 2.5em !important;
+    font-family: 'Rosie', serif !important;
+    background: linear-gradient(to right, #ff914d, #d946ef, #7cf9c0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: right;
+    margin-left: 50%;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+.name {
+    font-family: 'Shrikhand', sans-serif !important;
+    background-color: #faf7f8;
+    border-radius: 2em;
+    border: 2px solid;
+    border-color: #ff1d89;
+    font-size: 1.2em;
+    color: #ff1d89;
+    margin: 1em;
+    padding: 1em;
+}
+
+.description {
+    font-family: 'Shrikhand', sans-serif !important;
+    background: #f981bb;
+    border: 2px solid;
+    border-color: #ff1d89;
+    border-radius: 2em;
+    font-size: 1.2em;
+    color: #faf7f8;
+    margin: 1em;
+    padding: 1em;
+    margin-top: -3em;
+}
+
+.card img {
+    width: 25em;
+    height: auto;
+    margin-left: 10em;
+}
+
+.info {
+    font-family: 'Dream Orphans', sans-serif !important;
+    background-color: #ff1d89;
+    border-radius: 2em;
+    border: 5px solid;
+    border-color: #ff1d89;
+    font-size: 1.2em;
+    color: #faf7f8;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    margin-top: -3em;
+}
+
+.card2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+.name2 {
+    font-family: 'Shrikhand', sans-serif !important;
+    background-color: #faf7f8;
+    border-radius: 2em;
+    border: 2px solid;
+    border-color: #c06cff;
+    font-size: 1.2em;
+    color: #c06cff;
+    margin: 1em;
+    padding: 1em;
+    margin-bottom: -3em;
+}
+
+.description2 {
+    font-family: 'Shrikhand', sans-serif !important;
+    background: #cd93fc;
+    border: 5px solid;
+    border-color: #c06cff;
+    border-radius: 2em;
+    font-size: 1.2em;
+    color: #faf7f8;
+    margin: 1em;
+    padding: 1em;
+    margin-top: -3em;
+}
+
+.card2 img {
+    width: 25em;
+    height: auto;
+    margin-left: 10em;
+}
+
+.info2 {
+    font-family: 'Dream Orphans', sans-serif !important;
+    background-color: #c06cff;
+    border-radius: 2em;
+    border: 2px solid;
+    border-color: #c06cff;
+    font-size: 1.2em;
+    color: #faf7f8;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    margin-top: -3em;
+}
+
+.container2 {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    margin-bottom: 3em;
+}
+
+.container2 h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container2 p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+/* Detalle tipo cassette vibes */
+.highlight {
+    color: #57ffd9;
+    font-weight: bold;
+}
+
+.highlight2 {
+    color: #f6f6f6;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #bf6cfe;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .textos img {
+    width: 5em;
+    height: auto;
+    margin-top: -2em;
+}
+
+footer .textos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .textos h2 {
+    font-size: 1.8em;
+    color: #faf7f8;
+    margin-top: 10px;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+footer .textos h3 {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #101014;
+    font-family: 'Rosie', sans-serif !important;
+}

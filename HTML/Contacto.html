@@ -26,7 +26,7 @@
     <header>
         <img src="../img/Starlight.png" alt="logo">
         <div class="icons">
-            
+
             <a href="https://www.instagram.com/"><img src="../img/instagram.png" alt="Instagram"></a>
             <a href="#"><img src="../img/carrito-de-compras.png" alt="Carrito"></a>
         </div>
@@ -147,11 +147,8 @@ background: radial-gradient(circle, rgba(255, 29, 137, 1) 9%, rgba(87, 255, 217,
                 <input type="text" id="consulta" name="consulta" required class="w-full p-3 rounded-lg mt-1">
             </div>
 
-            <!-- CAPTCHA Fake -->
-            <div class="flex items-center space-x-3">
-                <input type="checkbox" id="captcha" required>
-                <label for="captcha">No soy un robot 🤖</label>
-            </div>
+            <!-- CAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="6Le12bArAAAAAP5u59IfkcNOzJYk8S9C_xZ1Astr"></div>
 
             <!-- Botón -->
             <button type="submit" class="w-full py-3 rounded-xl font-bold"
@@ -173,6 +170,11 @@ background: radial-gradient(circle, rgba(255, 29, 137, 1) 9%, rgba(87, 255, 217,
         const lista = document.getElementById("resumenLista");
 
         form.addEventListener("submit", (e) => {
+            if (grecaptcha.getResponse() === "") {
+                e.preventDefault();
+                alert("Por favor, completa el reCAPTCHA.");
+                return;
+            }
             e.preventDefault();
             lista.innerHTML = "";
             const datos = new FormData(form);
@@ -223,6 +225,7 @@ background: radial-gradient(circle, rgba(255, 29, 137, 1) 9%, rgba(87, 255, 217,
             });
         });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>

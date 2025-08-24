@@ -22,15 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function displayBooks(data){
+function displayBooks(data) {
     //Div de lista de libros
-    const bookList=document.getElementById("book-list")
+    const bookList = document.getElementById("book-list")
     //Limpiar el contenido de la lista
-    bookList.innerHTML=""
-    
+    bookList.innerHTML = ""
+
     data.forEach(book => {
-       const col=document.createElement("div") 
-       col.innerHTML=`<div class="card h-100 d-flex flex-column shadow-sm libro-item">
+        const col = document.createElement("div")
+        col.innerHTML = `<div class="card h-100 d-flex flex-column shadow-sm libro-item">
         <img src="${book.thumbnailUrl}" class="card-img-top img-fluid"
           style="max-height: 200px; width: auto; object-fit: contain;" onerror="this.src='img/image-not-found.jpg';"
           alt="Portada de ${book.title}">
@@ -56,7 +56,7 @@ function displayBooks(data){
     });
 }
 
-function displayMerch(data){
+function displayMerch(data) {
     const merchList = document.getElementById("merch-list");
     merchList.innerHTML = "";
 
@@ -90,7 +90,7 @@ function displayMerch(data){
     });
 }
 
-function displayCategorias(){
+function displayCategorias() {
     // Cargar las categorias
     const select = document.getElementById("filter");
     select.innerHTML = ""; // Limpiar opciones previas
@@ -123,3 +123,39 @@ function displayCategorias(){
 function verDetalleMerch(id) {
     window.location.href = `DetalleMerch.html?id=${id}`;
 }
+
+function comprarMerch(idMerch) {
+    const productoDiv = document.querySelector(`.btn-carrito[onclick="comprarMerch(${idMerch})"]`).closest('.producto');
+    const quantityInput = productoDiv.querySelector('.merch-quantity');
+    const quantity = parseInt(quantityInput.value, 10);
+
+    // Obtener talla seleccionada (si existe)
+    let talla = null;
+    const tallaBtn = productoDiv.querySelector('.talla-btn.selected');
+    if (tallaBtn) {
+        talla = tallaBtn.textContent;
+    }
+
+    if (isNaN(quantity) || quantity < 1) {
+        toastr.error("Cantidad inválida", "Error");
+        return;
+    }
+    if (productoDiv.querySelector('.tallas-lista') && !talla) {
+        toastr.error("Selecciona una talla", "Error");
+        return;
+    }
+
+    addToCart(idMerch, talla, quantity);
+}
+
+// Evento para seleccionar talla
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('talla-btn')) {
+        // Buscar el contenedor del producto
+        const productoDiv = e.target.closest('.producto');
+        // Quitar "selected" de todos los botones de talla de ese producto
+        productoDiv.querySelectorAll('.talla-btn').forEach(btn => btn.classList.remove('selected'));
+        // Agregar "selected" al botón tocado
+        e.target.classList.add('selected');
+    }
+});

@@ -8,30 +8,28 @@ function getCart(){
     return cart ? JSON.parse(cart) : [];
 }
 
-function addToCart(idMerch){
-    // Obtener merch completo
+function addToCart(idMerch, talla = null, cantidad = 1) {
     const item = merch.find((m) => m.id == idMerch);
-    // Objeto a guardar
     const cartItem = {
         id: item.id,
         name: item.nombre,
         price: item.precio,
-        quantity: 1,
+        talla: talla,
+        quantity: cantidad,
     };
     let cartArray = getCart();
-    // Buscar si el item existe en el carrito
-    const indexItem = cartArray.findIndex((merch) => merch.id === idMerch);
+
+    // Buscar si el item existe en el carrito (considerando talla)
+    const indexItem = cartArray.findIndex((merch) => merch.id === idMerch && merch.talla === talla);
 
     if (indexItem !== -1) {
-        // Item existente
-        cartArray[indexItem].quantity += 1;
-        toastr.info(`Cantidad de "${cartItem.name}" actualizada a ${cartArray[indexItem].quantity}`,
+        cartArray[indexItem].quantity += cantidad;
+        toastr.info(`Cantidad de "${cartItem.name}" (${talla ? 'Talla ' + talla : 'Sin talla'}) actualizada a ${cartArray[indexItem].quantity}`,
             'Carrito Actualizado');
     } else {
-        // Si el item no existe, lo agrega al carrito
         cartArray.push(cartItem);
         toastr.success(
-            `"${cartItem.name}" agregado al carrito`,
+            `"${cartItem.name}"${talla ? ' (Talla ' + talla + ')' : ''} agregado al carrito`,
             'Producto Agregado'
         );
     }

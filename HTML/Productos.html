@@ -15,6 +15,11 @@
 <body>
     <header>
         <img src="../img/Starlight.png" alt="logo">
+        <div class="icons">
+            
+            <a href="https://www.instagram.com/"><img src="../img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../img/carrito-de-compras.png" alt="Carrito"></a>
+        </div>
     </header>
 
     <nav id="menu">
@@ -55,7 +60,16 @@
                 <h2>✨ ¡Brilla como nunca con la merch oficial de Starlight! ✨</h2>
                 <p>Lleva contigo la magia de Starlight en cada momento. 🌌 Nuestra colección está diseñada para fans que
                     quieren lucir con estilo y sentirse parte del universo que tanto aman.</p>
-                <button>Compra ahora</button>
+                <a href="#productos">
+                    <button
+                        class="btn relative inline-flex items-center justify-start overflow-hidden font-medium transition-all bg-[#FF7F50] rounded hover:bg-white group py-1.5 px-2.5">
+                        <span
+                            class="w-56 h-48 rounded bg-[#FF7F50] absolute bottom-0 left-0 translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                        <span
+                            class="relative w-full text-left text-[#101014] transition-colors duration-300 ease-in-out group-hover:text-[#101014]">Compra ahora
+                        </span>
+                    </button>
+                </a>
             </div>
         </div>
 
@@ -66,6 +80,7 @@
                 <select id="filter" class="categoria-dropdown"></select>
             </div>
         </div>
+        <section id="productos"></section>
         <div id="merch-list" class="row"></div>
 
         <div id="detalle" class="d-none"></div>

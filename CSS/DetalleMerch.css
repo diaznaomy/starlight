@@ -1,0 +1,802 @@
+@font-face {
+    font-family: 'Dream Orphans';
+    src: url(../Fonts/Dream\ Orphans.otf);
+}
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url(../Fonts/Shrikhand-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Rosie';
+    src: url(../Fonts/Rosie\ Brown\ Serif\ Demo.otf);
+}
+
+@font-face {
+    font-family: 'Starlight';
+    src: url(../Fonts/Starlight.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+body {
+    background: #111116;
+    color: #fff;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+header img {
+    width: 25em;
+    height: auto;
+    margin-top: 3.5em;
+}
+
+header .icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+header .icons img {
+    width: 2.5em;
+    height: auto;
+    margin-left: 15px;
+}
+
+header .icons a:hover {
+    transform: scale(1.1);
+    cursor: poin
+}
+
+header .icons a img {
+    transition: transform 0.2s;
+}
+
+header .icons a:hover img {
+    transform: scale(1.2);
+}
+
+
+/* Breadcrumb */
+.card-header {
+    background: none !important;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.card-header h4 {
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    font-size: 2.5em;
+    color: #aefcff;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.breadcrumb-detalle {
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    font-size: 1.25em;
+    color: #fff;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    margin-left: 2em;
+}
+
+.breadcrumb-link {
+    color: #fff;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    border-bottom: 3px solid #fff;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.breadcrumb-link:hover {
+    color: #c06cff;
+    border-bottom: 3px solid #c06cff;
+}
+
+.breadcrumb-sep {
+    margin: 0 0.2em;
+}
+
+.breadcrumb-actual {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Precio y stock */
+.text-info.fw-bold {
+    color: #ff7fcb !important;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-body .d-flex {
+    gap: 2em;
+}
+
+.card-body .d-flex .detalle-stock {
+    color: #57ffd9;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.detalle-precio-stock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+}
+
+.detalle-precio {
+    color: #ff1d89;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.detalle-stock {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.detalle-stock.disponible {
+    color: #57ffd9;
+}
+
+.detalle-stock.agotado {
+    color: #ff1d1d;
+}
+
+/* Imagenes */
+.img-thumbnail {
+    border: 2px solid #c06cff !important;
+    border-radius: 1em !important;
+    background: #232336 !important;
+    box-shadow: 0 0 24px #c06cff44;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Descripción */
+.card-body strong {
+    color: #ff7f50;
+    font-size: 1.2em;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+}
+
+.card-body p {
+    color: #fff;
+    font-size: 1em;
+}
+
+/* Tallas y categorías */
+#tallas .badge {
+    background: #57ffd9 !important;
+    color: #232336 !important;
+    font-size: 1.1em;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+}
+
+#categorias .badge {
+    background: #c06cff !important;
+    color: #fff !important;
+    font-size: 1em;
+    border-radius: 1em;
+    padding: 0.4em 1em;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* Botón comprar */
+.btn-success {
+    background: #57ffd9 !important;
+    color: #181824 !important;
+    border: none !important;
+    border-radius: 1em !important;
+    padding: 0.5em 2em !important;
+    font-size: 1em !important;
+    font-weight: bold !important;
+    transition: background 0.2s;
+}
+
+.btn-success:hover {
+    background: #c06cff !important;
+    color: #fff !important;
+}
+
+
+/* Reseñas y estrellas */
+.detalle-calificacion-general,
+.detalle-resenas {
+    margin-top: 2em;
+}
+
+.detalle-calif-titulo,
+.detalle-resenas-titulo {
+    color: #c06cff;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.detalle-resenas-titulo {
+    display: block;
+    font-family: 'Dream Orphans', Arial, sans-serif;
+    font-size: 2.2rem;
+    color: #ff4fa3;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.detalle-estrellas,
+.resena-calificacion {
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+.detalle-estrellas .estrella,
+.resena-calificacion .estrella {
+    color: #ff7fcb;
+    margin-right: 0.2em;
+    transition: color 0.2s;
+}
+
+.detalle-estrellas .estrella.inactive,
+.resena-calificacion .estrella.inactive {
+    color: #232336;
+}
+
+/* Tarjeta de reseña */
+.resena-card {
+    background: #18181b;
+    border: 4px solid #ff824c;
+    border-radius: 2em;
+    padding: 1.5em 1.2em;
+    margin-bottom: 2em;
+    color: #fff;
+    font-family: 'Starlight', Arial, sans-serif;
+    box-shadow: 0 2px 12px #0002;
+}
+
+.resena-nombre {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+/* Calificación (estrellas) */
+.resena-calificacion img {
+    width: 32px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+/* Texto de calificación */
+.resena-card strong {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Comentario */
+.resena-comentario {
+    font-size: 1.2rem;
+    margin-top: 0.7em;
+    color: #fff;
+    font-family: 'Starlight', Arial, sans-serif;
+}
+
+/* Contenedor general de reseñas */
+.detalle-resenas {
+    max-width: 900px;
+    margin: 3em auto 2em auto;
+}
+
+/* Formulario de reseña */
+.detalle-form-resena {
+    border: 2px solid #ff1d89;
+    border-radius: 1em;
+    background: #181824;
+    padding: 1.5em;
+    margin-bottom: 2em;
+}
+
+.detalle-form-titulo {
+    color: #ff1d89;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.detalle-form-resena label {
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    margin-top: 1em;
+    display: block;
+}
+
+.detalle-form-resena input,
+.detalle-form-resena textarea {
+    width: 100%;
+    border: 2px solid #57ffd9;
+    border-radius: 1em;
+    background: #232336;
+    color: #fff;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.detalle-estrellas-form {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.detalle-estrellas-form .estrella {
+    color: #c06cff;
+    cursor: pointer;
+    margin-right: 0.2em;
+    transition: color 0.2s;
+}
+
+.detalle-estrellas-form .estrella.selected {
+    color: #ff7fcb;
+}
+
+.detalle-btn-enviar {
+    background: #57ffd9;
+    color: #181824;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    margin-top: 1em;
+    transition: background 0.2s;
+}
+
+.detalle-btn-enviar:hover {
+    background: #c06cff;
+    color: #fff;
+}
+
+#menu {
+    background: #ff1d89;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-top: 4em;
+    flex-direction: row;
+}
+
+#burger {
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+    order: 3;
+    margin-left: auto;
+}
+
+#burger img {
+    width: 2.3em;
+    align-self: right;
+}
+
+#navmenu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#navmenu a {
+    text-decoration: none;
+    color: #101014;
+    font-size: 1em !important;
+    font-weight: bold !important;
+    transition: transform 0.3s ease;
+    border-radius: 0.5em;
+}
+
+#navmenu a:hover {
+    transform: scale(1.05);
+    background-color: #ff7f50;
+    color: #faf7f8;
+}
+
+
+/* Espaciador opcional */
+#espaciador {
+    width: 20px;
+}
+
+/* ----------- ANIMACIONES ----------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 768px) {
+    #burger {
+        display: block;
+    }
+
+    #navmenu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    #navmenu.active {
+        display: flex;
+        background: rgba(255, 25, 140, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    #espaciador {
+        display: none;
+    }
+}
+
+#menu,
+#navmenu a {
+    font-family: 'dream-orphans', sans-serif;
+}
+
+/* Fin Menu */
+
+
+main .row.g-4 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+main .col-md-3.d-flex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .col-md-3.d-flex img {
+    margin-bottom: 1em;
+}
+
+main .col-md-9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.card-body > .row.g-4 > div {
+    min-width: 180px;
+}
+
+.card-body {
+    padding-bottom: 2em !important;
+}
+
+.card-body .mb-4,
+.card-body .d-flex,
+.card-body .detalle-envio,
+.card-body .detalle-descripcion {
+    margin-bottom: 1.2em !important;
+}
+
+.card-body .mb-4:last-child {
+    margin-bottom: 0 !important;
+}
+
+.main-images-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.main-images-row .img-thumbnail {
+    width: 40em;
+    height: auto;
+    max-width: 100%;
+    max-height: 38em;
+    background: #232336;
+    border: 3px solid #c06cff;
+    border-radius: 1.5em;
+    box-shadow: 0 0 32px #c06cff88;
+    object-fit: contain;
+    padding: 0.5em;
+    transition: box-shadow 0.2s;
+}
+
+.main-images-row .img-thumbnail:hover {
+    box-shadow: 0 0 48px #c06cffcc;
+}
+
+.main-images-section { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.detalle-envio {
+    text-align: left;
+    font-size: 1.15em;
+    color: #fff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-left: 2em;
+    margin-right: 2em;
+    max-width: 350px;
+    flex: 1;
+}
+
+.detalle-info-extra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2em;
+    gap: 1.5em;
+}
+
+.detalle-descripcion {
+    max-width: 350px;
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: left;
+    flex: 1;
+}
+
+.detalle-desc-titulo {
+    color: #ff7f50;
+    font-size: 1.5em;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.detalle-descripcion p {
+    color: #fff;
+    font-size: 1.15em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+.detalle-tallas {
+    text-align: left;
+    margin-left: 2em;
+    margin-right: 2em;
+    max-width: 350px;
+    flex: 1;
+}
+
+.detalle-tallas strong {
+    color: #c06cff;
+    font-size: 1.1em;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    display: block;
+}
+
+.detalle-tallas .badge {
+    margin: 0 0.3em;
+}
+
+.detalle-info-row, .detalle-info-row2  {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2em;
+    margin: 2em 0;
+    width: 100%;
+}
+
+.detalle-categorias {
+    max-width: 350px;
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: left;
+    flex: 1;
+}
+
+.detalle-categorias strong {
+    color: #c06cff;
+    font-size: 1.1em;
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    display: block;
+}
+
+.detalle-categorias .badge {
+    margin: 0 0.3em;
+}
+
+#btnComprar {
+    background-color: #ff1d89 !important;
+    align-self: center;
+    margin-left: 38%;
+    margin-top: -1.6em !important;
+    font-size: 2em !important;
+}
+
+.calificacionGeneral {
+    max-width: 30em;
+    width: 100%;
+    margin-left: 40%;
+    margin-top: 6em !important;
+}
+
+.resena-votos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-like, .btn-dislike {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-like:hover, .btn-dislike:hover {
+    transform: scale(1.15);
+}
+
+.like-count, .dislike-count {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* Nueva sección para agregar reseñas */
+.agrega-resena-card {
+    background: #18181b;
+    border: 3px solid #ff4fa3;
+    border-radius: 2em;
+    padding: 2em 2em 1.5em 2em;
+    max-width: 700px;
+    margin: 3em auto 2em auto;
+    color: #fff;
+    font-family: 'Dream Orphans', Arial, sans-serif;
+}
+
+.agrega-resena-titulo {
+    display: block;
+    font-size: 2rem;
+    color: #ff4fa3;
+    font-weight: bold;
+    margin-bottom: 1em;
+    font-family: 'Dream Orphans', Arial, sans-serif;
+}
+
+.agrega-resena-label {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Dream Orphans', Arial, sans-serif;
+}
+
+.agrega-resena-input,
+.agrega-resena-textarea {
+    border: 2px solid #5fffe0;
+    border-radius: 2em;
+    background: #18181b;
+    color: #fff;
+    font-size: 1.2rem;
+    padding-left: 1em;
+    font-family: 'Dream Orphans', Arial, sans-serif;
+    margin-left: 1em;
+}
+
+.agrega-resena-textarea {
+    border-radius: 1.5em;
+    padding-top: 1em;
+    margin-top: 1em;
+}
+
+.agrega-resena-estrellas {
+    margin-top: 0.5em;
+}
+
+.estrella-form {
+    width: 56px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: transform 0.15s;
+    filter: drop-shadow(0 0 2px #c77dff);
+}
+
+.estrella-form.selected {
+    filter: drop-shadow(0 0 6px #c77dff);
+}
+
+.agrega-resena-btn {
+    background: #5fffe0;
+    color: #222;
+    font-size: 1.3rem;
+    border-radius: 2em;
+    padding: 0.5em 2em;
+    border: none;
+    margin-top: 1em;
+    font-family: 'Starlight', Arial, sans-serif;
+    transition: background 0.2s;
+}
+
+.agrega-resena-btn:hover {
+    background: #3fd6b6;
+    color: #fff;
+}
+

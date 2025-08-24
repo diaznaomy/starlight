@@ -8,7 +8,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 4.5
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const merch = [
     precio: 12000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Oversize"]
+    categories: ["Ropa", "Oversize"],
+    calificacion: 3.8
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 4.2
   },
   {
     id: 4,
@@ -41,7 +44,8 @@ const merch = [
     precio: 12000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Oversize"]
+    categories: ["Ropa", "Oversize"],
+    calificacion: 3.5
   },
   {
     id: 5,
@@ -52,7 +56,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.9
   },
   {
     id: 6,
@@ -63,7 +68,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.1
   },
   {
     id: 7,
@@ -73,7 +79,8 @@ const merch = [
     descripcion: "Tote bag con diseño de Hot To Go de Chappel Roan.",
     precio: 6000,
     disponible: true,
-    categories: ["Tote"]
+    categories: ["Tote"],
+    calificacion: 3.7
   },
   {
     id: 8,
@@ -84,7 +91,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.8
   },
   {
     id: 9,
@@ -95,7 +103,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.0
   },
   {
     id: 10,
@@ -106,7 +115,8 @@ const merch = [
     precio: 12000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Oversize"]
+    categories: ["Ropa", "Oversize"],
+    calificacion: 3.9
   },
   {
     id: 11,
@@ -117,7 +127,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.7
   },
   {
     id: 12,
@@ -128,7 +139,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.3
   },
   {
     id: 13,
@@ -139,7 +151,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Oversize"]
+    categories: ["Ropa", "Oversize"],
+    calificacion: 3.6
   },
   {
     id: 14,
@@ -150,7 +163,8 @@ const merch = [
     precio: 15000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Hoodie"]
+    categories: ["Ropa", "Hoodie"],
+    calificacion: 4.4
   },
   {
     id: 15,
@@ -160,7 +174,8 @@ const merch = [
     descripcion: "Tote bag de la combinación entre Sanrio y My chemical romance.",
     precio: 6000,
     disponible: true,
-    categories: ["Ropa", "Tote"]
+    categories: ["Ropa", "Tote"],
+    calificacion: 3.3
   },
   {
     id: 16,
@@ -170,7 +185,8 @@ const merch = [
     descripcion: "Tote bag con diseño de Satellite de Harry Styles.",
     precio: 6000,
     disponible: true,
-    categories: ["Ropa", "Tote"]
+    categories: ["Ropa", "Tote"],
+    calificacion: 3.9
   },
   {
     id: 17,
@@ -181,7 +197,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 4.6
   },
   {
     id: 18,
@@ -192,7 +209,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 3.4
   },
   {
     id: 19,
@@ -202,7 +220,8 @@ const merch = [
     descripcion: "Tote bag con diseño de Snoopy conjuto a Harry Styles.",
     precio: 6000,
     disponible: true,
-    categories: ["Tote"]
+    categories: ["Tote"],
+    calificacion: 3.8
   },
   {
     id: 20,
@@ -213,7 +232,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 4.0
   },
   {
     id: 21,
@@ -224,7 +244,8 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 3.5
   },
   {
     id: 22,
@@ -235,6 +256,7 @@ const merch = [
     precio: 8000,
     disponible: true,
     tallas: ["S", "M", "L", "XL"],
-    categories: ["Ropa", "Tank"]
+    categories: ["Ropa", "Tank"],
+    calificacion: 4.1
   }
 ];

@@ -87,7 +87,7 @@ header img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-    font-size: 0.9em !important;
+    font-size: 0.2em !important;
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
@@ -240,22 +240,57 @@ h2 {
     width: 100%;
 }
 
+/* --- Estilo uniforme para todas las cajas de productos --- */
 .producto {
-    background: #101014;
-    border-radius: 10px;
+    background: #181824 !important;
+    border: 2.5px solid #ff1d89 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 0 0 2px #ff1d89, 0 4px 16px rgba(255, 29, 137, 0.08);
     text-align: center;
-    padding: 20px;
-    transition: transform 0.2s ease-in-out;
+    padding: 28px 12px !important;
+    color: #faf7f8 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .producto:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(255, 29, 137, 0.18);
+    background: #232336;
 }
 
 .producto img {
-    width: 100%;
-    max-height: 220px;
+    width: 90% !important;
+    max-height: 200px !important;
     object-fit: contain;
+    margin-bottom: 18px !important;
+    border-radius: 8px;
+}
+
+.producto h3 {
+    font-family: 'Dream Orphans', sans-serif !important;
+    font-size: 1.25em !important;
+    margin-bottom: 8px !important;
+    color: #faf7f8 !important;
+    font-weight: bold !important;
+}
+
+.producto .precio {
+    font-size: 1.15em !important;
+    font-weight: bold !important;
+    color: #ff7f50 !important;
+    margin-bottom: 0 !important;
+    letter-spacing: 1px;
+}
+
+/* Elimina estilos anteriores para evitar conflictos */
+.producto img,
+.producto h3,
+.producto .precio {
+    box-shadow: none;
 }
 
 footer {
@@ -295,3 +330,186 @@ footer .textos h3 {
     color: #101014;
     font-family: 'Rosie', sans-serif !important;
 }
+
+/* Estilo solo para los productos del merch-list */
+#merch-list .producto {
+    background: #181824;
+    border: 2.5px solid #ff1d89;
+    border-radius: 18px;
+    box-shadow: 0 0 0 2px #ff1d89, 0 4px 16px rgba(255, 29, 137, 0.08);
+    text-align: center;
+    padding: 28px 12px;
+    color: #faf7f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#merch-list .producto:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(255, 29, 137, 0.18);
+    background: #232336;
+}
+
+#merch-list .producto img {
+    width: 90%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    border-radius: 8px;
+}
+
+#merch-list .producto h3 {
+    font-family: 'Dream Orphans', sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 8px;
+    color: #faf7f8;
+    font-weight: bold;
+}
+
+#merch-list .producto .precio {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #ff7f50;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+/* Botones de tallas estilo personalizado */
+.tallas-lista {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.talla-btn {
+    border: 2px solid #57ffd9;
+    background: #232336;
+    color: #faf7f8;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-family: 'Dream Orphans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.talla-btn:hover,
+.talla-btn.active {
+    background: #c06cff;
+    color: #fff;
+    border-color: #c06cff;
+}
+
+/* Botón de añadir al carrito */
+.btn-carrito {
+    background: #c06cff;
+    border: none;
+    border-radius: 2em;
+    padding: 0.1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.btn-carrito:hover {
+    background: #a04be6;
+}
+
+.btn-carrito img {
+    width: 2.2em;
+    height: 2.2em;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+/* Botón de información */
+.btn-info {
+    background: transparent;
+    border: 2px solid #c06cff;
+    border-radius: 2em;
+    padding: 0.5em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-info:hover {
+    background: #232336;
+    border-color: #57ffd9;
+}
+
+.btn-info img {
+    width: 2em;
+    height: 2em;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.titulo-categorias-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em 2em 2em 2em;
+    gap: 2em;
+}
+
+.titulo-categorias-row h2 {
+    margin: 0 1em 0 1em;
+    margin-top: 2em;
+    font-size: 2.5em;
+}
+
+.categoria-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 1em 0 1em;
+    margin-top: 2em;
+}
+
+.categoria-label {
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.categoria-dropdown {
+    background: #232336;
+    color: #fff;
+    font-family: 'Shrikhand', 'Dream Orphans', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 2.5px solid;
+    border-image: linear-gradient(90deg, #ff1d89, #57ffd9) 1;
+    padding: 0.5em 2em;
+    outline: none;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 1em;
+    cursor: pointer;
+    box-shadow: none;
+    display: inline-block;
+}
+
+.categoria-dropdown:hover,
+.categoria-dropdown:focus {
+    background: rgb(76, 76, 87);
+    border-color: #c06cff;
+    box-shadow: 0 0 0 2px #c06cff44;
+}
+

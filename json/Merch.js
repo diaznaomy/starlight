@@ -1,0 +1,240 @@
+const merch = [
+  {
+    id: 1,
+    nombre: "Korn x Bratz",
+    imagen: "../img/merch/bratzXkornFront.png",
+    imagen2: "../img/merch/bratzXkornBack.png",
+    descripcion: "Tank top edición limitada de la combinación entre Korn y Bratz.",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  },
+  {
+    id: 2,
+    nombre: "We can´t be friends",
+    imagen: "../img/merch/CantBeFriendsBack.png",
+    imagen2: "../img/merch/CantBeFriendsFront.png",
+    descripcion: "Camiseta oversize edición limitada de la canción 'We can´t be friends' de Ariana Grande.",
+    precio: 12000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Oversize"]
+  },
+  {
+    id: 3,
+    nombre: "My chemical romance x My little pony",
+    imagen: "../img/merch/chemXponyFront.png",
+    imagen2: "../img/merch/chemXponyBack.png",
+    descripcion: "Tank top edición limitada de la combinación entre My chemical romance y My little pony.",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  },
+  {
+    id: 4,
+    nombre: "I cry a lot",
+    imagen: "../img/merch/CryALotBack.png",
+    imagen2: "../img/merch/CryALotFront.png",
+    descripcion: "Camiseta oversize edición limitada de la canción 'I cry a lot' de Taylor Swift.",
+    precio: 12000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Oversize"]
+  },
+  {
+    id: 5,
+    nombre: "Diamond eyes",
+    imagen: "../img/merch/DiamondEyesBack.png",
+    imagen2: "../img/merch/DiamondEyesFront.png",
+    descripcion: "Hoodie oversize de la canción 'Diamond eyes' de Deftones.",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 6,
+    nombre: "Hot girls like metal",
+    imagen: "../img/merch/hotGirlsBack.png",
+    imagen2: "../img/merch/hotGirlsFront.png",
+    descripcion: "Hoodie oversize de logos de bandas de metal con estilo girly",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 7,
+    nombre: "Hot To Go",
+    imagen: "../img/merch/hotToGo1.png",
+    imagen2: "../img/merch/hotToGo2.png",
+    descripcion: "Tote bag con diseño de Hot To Go de Chappel Roan.",
+    precio: 6000,
+    disponible: true,
+    categories: ["Tote"]
+  },
+  {
+    id: 8,
+    nombre: "In utero",
+    imagen: "../img/merch/InUteroBack.png",
+    imagen2: "../img/merch/InUteroFront.png",
+    descripcion: "Hoodie edición limitada de la portada del álbum In Utero de Nirvana.",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 9,
+    nombre: "Kiss x Hello Kitty",
+    imagen: "../img/merch/KittyKissBack.png",
+    imagen2: "../img/merch/KittyKissFront.png",
+    descripcion: "Hoodie edición limitada de la combinación entre Kiss y Hello Kitty.",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 10,
+    nombre: "Right where you left me",
+    imagen: "../img/merch/LeftMeBack.png",
+    imagen2: "../img/merch/LeftMeFront.png",
+    descripcion: "Camiseta oversize edición limitada de la canción 'Right where you left me' de Taylor Swift.",
+    precio: 12000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Oversize"]
+  },
+  {
+    id: 11,
+    nombre: "Meowtallica",
+    imagen: "../img/merch/meowtallicaBack.png",
+    imagen2: "../img/merch/meowtallicaFront.png",
+    descripcion: "Hoodie de la combinación entre Metallica y gatos.",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 12,
+    nombre: "One night",
+    imagen: "../img/merch/OneNightBack.png",
+    imagen2: "../img/merch/OneNightFront.png",
+    descripcion: "Hoodie oversize con el poster de One Night de My Chemical Romance.",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 13,
+    nombre: "Pierce the veil",
+    imagen: "../img/merch/pierceTheVeilBack.png",
+    imagen2: "../img/merch/pierceTheVeilFront.png",
+    descripcion: "Camisa oversize edición limitada de la banda Pierce the veil.",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Oversize"]
+  },
+  {
+    id: 14,
+    nombre: "Please Please Please",
+    imagen: "../img/merch/pleaseBack.png",
+    imagen2: "../img/merch/pleaseFront.png",
+    descripcion: "Hoodie oversize edición limitada de la canción 'Please Please Please' de Sabrina Carpenter.",
+    precio: 15000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Hoodie"]
+  },
+  {
+    id: 15,
+    nombre: "Sanrio x My chemical romance",
+    imagen: "../img/merch/sanrioXchem1.png",
+    imagen2: "../img/merch/sanrioXchem2.png",
+    descripcion: "Tote bag de la combinación entre Sanrio y My chemical romance.",
+    precio: 6000,
+    disponible: true,
+    categories: ["Ropa", "Tote"]
+  },
+  {
+    id: 16,
+    nombre: "Satellite",
+    imagen: "../img/merch/satellite1.png",
+    imagen2: "../img/merch/satellite2.png",
+    descripcion: "Tote bag con diseño de Satellite de Harry Styles.",
+    precio: 6000,
+    disponible: true,
+    categories: ["Ropa", "Tote"]
+  },
+  {
+    id: 17,
+    nombre: "Red Hot Silly Peppers",
+    imagen: "../img/merch/sillyPeppersFront.png",
+    imagen2: "../img/merch/sillyPeppersBack.png",
+    descripcion: "Tank top Red Hot Chili Peppers",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  },
+  {
+    id: 18,
+    nombre: "Splipknot x Barbie",
+    imagen: "../img/merch/slipknotFront.png",
+    imagen2: "../img/merch/slipknotBack.png",
+    descripcion: "Tank top de la combinación entre Slipknot y Barbie.",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  },
+  {
+    id: 19,
+    nombre: "Snoopy on tour",
+    imagen: "../img/merch/snoopyOnTour1.png",
+    imagen2: "../img/merch/snoopyOnTour2.png",
+    descripcion: "Tote bag con diseño de Snoopy conjuto a Harry Styles.",
+    precio: 6000,
+    disponible: true,
+    categories: ["Tote"]
+  },
+  {
+    id: 20,
+    nombre: "...And Justice for All",
+    imagen: "../img/merch/tankMetallicaFront.png",
+    imagen2: "../img/merch/tankMetallicaBack.png",
+    descripcion: "Tank top edición limitada de la banda Metallica.",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  },
+  {
+    id: 21,
+    nombre: "Maybe I´m too emotional",
+    imagen: "../img/merch/toEmotionalFront.png",
+    imagen2: "../img/merch/toEmotionalBack.png",
+    descripcion: "Tank top diseño limitada de la canción 'Good for u' de Olivia Rodrigo.",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  },
+  {
+    id: 22,
+    nombre: "Violent Vira",
+    imagen: "../img/merch/ViolentViraBack.png",
+    imagen2: "../img/merch/ViolentViraFront.png",
+    descripcion: "Tank top del poster de Violent Vira",
+    precio: 8000,
+    disponible: true,
+    tallas: ["S", "M", "L", "XL"],
+    categories: ["Ropa", "Tank"]
+  }
+];

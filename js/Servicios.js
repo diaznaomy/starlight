@@ -25,7 +25,18 @@ class SpotifyPlayer {
         this.authSection = document.getElementById('authSection');
         this.playerSection = document.getElementById('playerSection');
         this.playerStart = document.getElementById('player');
-        this.Status = document.getElementById('connection-status');
+        this.Status = document.getElementById('connection-status');;
+
+        //Settings
+        this.SettingsIcon = document.getElementById('settingsIcon');
+        this.settingsPanel = document.getElementById('settingsPanel');
+        this.SettingColor = document.getElementById('selectColor');
+        this.SettingColor2 = document.getElementById('selectColor2');
+        this.SettingColor3 = document.getElementById('selectColor3');
+        this.SettingColor4 = document.getElementById('selectColor4');
+        this.SettingColor5 = document.getElementById('selectColor5');
+        this.SettingColor6 = document.getElementById('selectColor6');
+        this.constantColor = document.getElementById('selectColor5');
 
         // Player elements
         this.trackImage = document.getElementById('trackImage');
@@ -78,6 +89,15 @@ class SpotifyPlayer {
         this.tokenInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.connect();
         });
+
+        //Settings
+        this.SettingsIcon.addEventListener('click', () => this.toggleSettings());
+        this.SettingColor.addEventListener('click', () => this.applyColor(this.SettingColor));
+        this.SettingColor2.addEventListener('click', () => this.applyColor(this.SettingColor2));
+        this.SettingColor3.addEventListener('click', () => this.applyColor(this.SettingColor3));
+        this.SettingColor4.addEventListener('click', () => this.applyColor(this.SettingColor4));
+        this.SettingColor5.addEventListener('click', () => this.applyColor(this.SettingColor5));
+        this.SettingColor6.addEventListener('click', () => this.applyColor(this.SettingColor6));
 
         // Player controls
         this.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
@@ -271,6 +291,10 @@ class SpotifyPlayer {
         }
     }
 
+    toggleSettings() {
+        this.settingsPanel.classList.toggle('hidden');
+    }
+
     displayPlaylists(playlists) {
         this.playlistsList.innerHTML = '';
 
@@ -442,11 +466,11 @@ class SpotifyPlayer {
         if (this.isPlaying) {
             playIcon.className = 'fas fa-pause';
             this.iconPlayPause.src = '../img/right.png';
-            this.iconPlayer.src = '../img/reproductorAqua.gif';
+            this.applyColor(this.constantColor);
         } else {
             playIcon.className = 'fas fa-play';
             this.iconPlayPause.src = '../img/pause.png';
-            this.iconPlayer.src = '../img/reproductorAquaPng.png';
+            this.applyColor(this.constantColor);
         }
         // Update progress
         if (this.duration > 0) {
@@ -504,6 +528,49 @@ class SpotifyPlayer {
             case 'playlists':
                 this.playlistsSection.classList.remove('hidden');
                 this.navPlaylists.classList.add('active');
+                break;
+        }
+    }
+
+    applyColor(selectedColor) {
+        this.constantColor = selectedColor;
+        const colorbox = selectedColor;
+        switch(colorbox.dataset.color){
+            case '#FF1D89':
+                if(this.isPlaying)
+                    this.iconPlayer.src = '../img/reproductorPink.gif';
+                else
+                    this.iconPlayer.src = '../img/reproductorPinkPng.png';
+                break;
+            case '#C06CFF':
+                if(this.isPlaying)
+                    this.iconPlayer.src = '../img/reproductorMorado.gif';
+                else
+                    this.iconPlayer.src = '../img/reproductorMoradoPng.png';
+                break;
+            case '#101014':
+                if(this.isPlaying)
+                    this.iconPlayer.src = '../img/reproductorBlack.gif';
+                else
+                    this.iconPlayer.src = '../img/reproductorBlackPng.png';
+                break;
+            case '#FAF7F8':
+                if(this.isPlaying)
+                    this.iconPlayer.src = '../img/reproductorWhite.gif';
+                else
+                    this.iconPlayer.src = '../img/reproductorWhitePng.png';
+                break;
+            case '#57FFD9':
+                if(this.isPlaying)
+                    this.iconPlayer.src = '../img/reproductorAqua.gif';
+                else
+                    this.iconPlayer.src = '../img/reproductorAquaPng.png';
+                break;
+            case '#FF7F50':
+                if(this.isPlaying)
+                    this.iconPlayer.src = '../img/reproductorPeach.gif';
+                else
+                    this.iconPlayer.src = '../img/reproductorPeachPng.png';
                 break;
         }
     }

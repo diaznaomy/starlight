@@ -40,6 +40,30 @@ header img {
     margin-top: 3.5em;
 }
 
+header .icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+header .icons img {
+    width: 2.5em;
+    height: auto;
+    margin-left: 15px;
+}
+
+header .icons a:hover{
+    transform: scale(1.1);  
+    cursor: poin
+}
+
+header .icons a img {
+    transition: transform 0.2s;
+}
+
+header .icons a:hover img {
+    transform: scale(1.2);
+}
+
 /* ------------------- */
 /* Menu */
 /* ------------------- */

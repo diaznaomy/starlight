@@ -81,7 +81,7 @@ function displayMerch(data){
                 <button class="btn-carrito" onclick="comprarMerch(${item.id})">
                     <img src="../img/anadir-al-carrito.png" alt="Añadir al carrito">
                 </button>
-                <button class="btn-info" onclick="detalleMerch(${item.id})" data-id="${item.id}">
+                <button class="btn-info" onclick="verDetalleMerch(${item.id})">
                     <img src="../img/informacion.png" alt="Información">
                 </button>
             </div>
@@ -118,4 +118,8 @@ function displayCategorias(){
         option.textContent = category;
         select.appendChild(option);
     }
+}
+
+function verDetalleMerch(id) {
+    window.location.href = `DetalleMerch.html?id=${id}`;
 }

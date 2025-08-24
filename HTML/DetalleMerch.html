@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Merch</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="./css/bootstrap-brite.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../CSS/DetalleMerch.css">
+</head>
+
+<body>
+    <header>
+        <img src="../img/Starlight.png" alt="logo">
+        <div class="icons">
+
+            <a href="https://www.instagram.com/"><img src="../img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../img/carrito-de-compras.png" alt="Carrito"></a>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="../index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="./Productos.html">
+                <h3>Productos</h3>
+            </a>
+            <a href="./Servicios.html">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="./Contacto.html">
+                <h3>Contacto</h3>
+            </a>
+            <a href="./AcercaDe.html">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="breadcrumb-detalle mb-4">
+            <a href="./Productos.html" class="breadcrumb-link">
+                <span><strong>Productos</strong></span>
+            </a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-actual"><strong>Detalle de producto</strong></span>
+        </div>
+
+        <div id="detalle" class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 id="nombre" class="mb-0">Nombre del producto</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <!-- Imagen miniatura -->
+                            <div class="main-images-section">
+                                <div class="detalle-precio-stock">
+                                    <span id="precio" class="detalle-precio"></span>
+                                    <span id="detalle-stock" class="detalle-stock"></span>
+                                </div>
+                                <br>
+                                <div class="main-images-row">
+                                    <img id="imagen" class="img-thumbnail"
+                                        style="max-height: 200px; width: auto; object-fit: contain;"
+                                        src="img/image-not-found.jpg" alt="Imagen merch" />
+                                    <img id="imagen2" class="img-thumbnail mt-2"
+                                        style="max-height: 200px; width: auto; object-fit: contain; display:none;"
+                                        src="img/image-not-found.jpg" alt="Imagen merch reverso" />
+                                </div>
+                                <br>
+                                <div class="detalle-info-row">
+                                    <div class="detalle-envio">
+                                        <strong>Detalles del envío:</strong>
+                                        <br>
+                                        <span>Tiempo estimado de entrega: 3 - 4 días laborales</span><br>
+                                        <span>Costo de envío: ₡2.500</span>
+                                    </div>
+                                    <div class="detalle-tallas" id="tallasContainer" style="display:none;">
+                                        <strong>Tallas:</strong>
+                                        <br>
+                                        <div id="tallas"></div>
+                                    </div>
+                                </div>
+                                <div class="detalle-info-row2">
+                                    <div class="detalle-descripcion">
+                                        <span class="detalle-desc-titulo">Descripción:</span>
+                                        <p id="descripcion"></p>
+                                    </div>
+                                    <div class="detalle-categorias">
+                                        <strong>Categorías:</strong>
+                                        <br>
+                                        <div id="categorias"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnComprar" class="btn btn-success btn-lg px-4" onclick="comprarMerch()">
+            <i class="bi bi-cart-fill me-2"></i> Comprar
+        </button>
+
+        <div class="calificacionGeneral">
+            <span class="detalle-desc-titulo" style="color:#c77dff; font-size:2rem; font-weight:bold;">Calificación
+                general:</span>
+            <div id="estrellasCalificacion" class="mt-2"></div>
+        </div>
+
+        <div class="detalle-resenas mt-5">
+            <span class="detalle-resenas-titulo" style="color:#ff4fa3; font-size:2rem; font-weight:bold;">
+                Reseñas de usuarios:
+            </span>
+            <div class="resena-card mt-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h3 class="resena-nombre">Valeria M.</h3>
+                    <div class="resena-votos">
+                        <button class="btn-like" onclick="votarResena(this, 'like')">
+                            <img src="../img/like.png" alt="Like" width="32">
+                        </button>
+                        <span class="like-count">0</span>
+                        <button class="btn-dislike ms-2" onclick="votarResena(this, 'dislike')">
+                            <img src="../img/dislike.png" alt="Dislike" width="32">
+                        </button>
+                        <span class="dislike-count">0</span>
+                    </div>
+                </div>
+                <div>
+                    <strong>Calificación:</strong>
+                    <span class="resena-calificacion">
+                        <img src="../img/1star.png" alt="estrella" width="32">
+                        <img src="../img/2star.png" alt="estrella" width="32">
+                        <img src="../img/3star.png" alt="estrella" width="32">
+                        <img src="../img/4star.png" alt="estrella" width="32">
+                        <img src="../img/5star.png" alt="estrella" width="32">
+                    </span>
+                </div>
+                <div class="resena-comentario">
+                    <strong>Comentario:</strong> ¡Me encantó! El producto llegó súper rápido y en perfectas condiciones.
+                    Se nota que está hecho con mucho amor. Lo recomiendo 100%.
+                </div>
+            </div>
+            <div class="resena-card mt-4">
+                <h3 class="resena-nombre">María A.</h3>
+                <div class="resena-votos">
+                    <button class="btn-like" onclick="votarResena(this, 'like')">
+                        <img src="../img/like.png" alt="Like" width="32">
+                    </button>
+                    <span class="like-count">0</span>
+                    <button class="btn-dislike ms-2" onclick="votarResena(this, 'dislike')">
+                        <img src="../img/dislike.png" alt="Dislike" width="32">
+                    </button>
+                    <span class="dislike-count">0</span>
+                </div>
+                <div class="resena-calificacion mb-2">
+                    <img src="../img/1star.png" alt="estrella" width="32">
+                    <img src="../img/2star.png" alt="estrella" width="32">
+                    <img src="../img/3star.png" alt="estrella" width="32">
+                    <img src="../img/4star.png" alt="estrella" width="32">
+                </div>
+                <div class="resena-comentario">
+                    Comentario: Muy buen producto, tal como en las fotos. Solo le pongo 4 estrellas porque me hubiera
+                    gustado tener más opciones de colores.
+                </div>
+            </div>
+            <div class="resena-card mt-4">
+                <h3 class="resena-nombre">Sofía R.</h3>
+                <div class="resena-votos">
+                    <button class="btn-like" onclick="votarResena(this, 'like')">
+                        <img src="../img/like.png" alt="Like" width="32">
+                    </button>
+                    <span class="like-count">0</span>
+                    <button class="btn-dislike ms-2" onclick="votarResena(this, 'dislike')">
+                        <img src="../img/dislike.png" alt="Dislike" width="32">
+                    </button>
+                    <span class="dislike-count">0</span>
+                </div>
+                <div class="resena-calificacion mb-2">
+                    <img src="../img/1star.png" alt="estrella" width="32">
+                    <img src="../img/2star.png" alt="estrella" width="32">
+                    <img src="../img/3star.png" alt="estrella" width="32">
+                    <img src="../img/4star.png" alt="estrella" width="32">
+                    <img src="../img/5star.png" alt="estrella" width="32">
+                </div>
+                <div class="resena-comentario">
+                    Comentario: Excelente calidad y atención al cliente. Compré uno para mí y otro para regalar.
+                    ¡Volveré a
+                    comprar sin duda!
+                </div>
+            </div>
+        </div>
+        <div class="agrega-resena-card mt-5">
+            <span class="agrega-resena-titulo">Agrega una reseña:</span>
+            <form id="formResena" autocomplete="off">
+                <div class="mb-4">
+                    <label for="nombreResena" class="form-label agrega-resena-label">Nombre:</label>
+                    <input type="text" id="nombreResena" class="form-control agrega-resena-input" required>
+                </div>
+                <br>
+                <div class="mb-4">
+                    <label for="comentarioResena" class="form-label agrega-resena-label">Comentario:</label>
+                    <br>
+                    <textarea id="comentarioResena" class="form-control agrega-resena-textarea" rows="4"
+                        required></textarea>
+                </div>
+                <br>
+                <div class="mb-4">
+                    <label class="form-label agrega-resena-label">Calificación:</label>
+                    <div id="agregaResenaEstrellas" class="agrega-resena-estrellas">
+                        <img src="../img/star-outline.png" data-value="1" class="estrella-form" alt="1 estrella">
+                        <img src="../img/star-outline.png" data-value="2" class="estrella-form" alt="2 estrellas">
+                        <img src="../img/star-outline.png" data-value="3" class="estrella-form" alt="3 estrellas">
+                        <img src="../img/star-outline.png" data-value="4" class="estrella-form" alt="4 estrellas">
+                        <img src="../img/star-outline.png" data-value="5" class="estrella-form" alt="5 estrellas">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success agrega-resena-btn">Enviar reseña</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="../json/Merch.js"></script>
+    <script>
+        function getMerchId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        function showMerchDetail(id) {
+            const merchItem = merch.find(m => m.id == id);
+            if (!merchItem) {
+                document.getElementById('alertNotFound').classList.remove('d-none');
+                document.getElementById('detalle').style.display = 'none';
+                return;
+            }
+            document.getElementById('nombre').textContent = merchItem.nombre;
+            document.getElementById('imagen').src = merchItem.imagen;
+            if (merchItem.imagen2) {
+                document.getElementById('imagen2').src = merchItem.imagen2;
+                document.getElementById('imagen2').style.display = 'block';
+            }
+            document.getElementById('precio').textContent = `₡${merchItem.precio}`;
+            const stockSpan = document.getElementById('detalle-stock');
+            if (merchItem.disponible) {
+                stockSpan.textContent = "● En stock - Disponible para entrega inmediata";
+                stockSpan.className = "detalle-stock disponible";
+            } else {
+                stockSpan.textContent = "● Artículo agotado";
+                stockSpan.className = "detalle-stock agotado";
+            }
+            document.getElementById('descripcion').textContent = merchItem.descripcion;
+
+            // Tallas
+            if (merchItem.tallas && merchItem.tallas.length > 0) {
+                document.getElementById('tallasContainer').style.display = 'block';
+                document.getElementById('tallas').innerHTML = merchItem.tallas.map(t =>
+                    `<span class="badge bg-info text-dark fs-5">${t}</span>`
+                ).join('');
+            }
+
+            // Categorías
+            document.getElementById('categorias').innerHTML = merchItem.categories.map(c =>
+                `<span class="badge bg-secondary">${c}</span>`
+            ).join('');
+
+            // Calificación general
+            const estrellasDiv = document.getElementById('estrellasCalificacion');
+            estrellasDiv.innerHTML = '';
+            if (merchItem.calificacion && merchItem.calificacion > 0) {
+                for (let i = 1; i <= merchItem.calificacion; i++) {
+                    estrellasDiv.innerHTML += `<img src="../img/${i}star.png" alt="Estrella ${i}" style="width:48px; height:auto; margin-right:8px;">`;
+                }
+            }
+        }
+
+        function comprarMerch() {
+            alert("¡Acción de compra ejecutada!");
+            // Aquí puedes agregar la lógica de compra real
+        }
+
+        function votarResena(btn, tipo) {
+            const card = btn.closest('.resena-card');
+            if (tipo === 'like') {
+                const count = card.querySelector('.like-count');
+                count.textContent = parseInt(count.textContent) + 1;
+            } else {
+                const count = card.querySelector('.dislike-count');
+                count.textContent = parseInt(count.textContent) + 1;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = getMerchId();
+            showMerchDetail(id);
+        });
+
+        document.querySelectorAll('.estrella-form').forEach(star => {
+            star.addEventListener('click', function () {
+                const value = parseInt(this.getAttribute('data-value'));
+                document.querySelectorAll('.estrella-form').forEach((s, i) => {
+                    if (i < value) {
+                        s.classList.add('selected');
+                        s.src = '../img/star-filled.png'; // Cambia a tu imagen de estrella llena
+                    } else {
+                        s.classList.remove('selected');
+                        s.src = '../img/star-outline.png'; // Cambia a tu imagen de estrella vacía
+                    }
+                });
+                document.getElementById('formResena').setAttribute('data-calificacion', value);
+            });
+        });
+
+        // Ejemplo de manejo de envío (puedes personalizar)
+        document.getElementById('formResena').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombreResena').value;
+            const comentario = document.getElementById('comentarioResena').value;
+            const calificacion = this.getAttribute('data-calificacion') || 0;
+            alert(`Reseña enviada:\nNombre: ${nombre}\nComentario: ${comentario}\nCalificación: ${calificacion} estrellas`);
+            // Aquí puedes agregar la lógica para mostrar la reseña en la página
+        });
+    </script>
+</body>
+
+</html>

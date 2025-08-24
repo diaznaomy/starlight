@@ -49,9 +49,23 @@
     </nav>
 
     <div class="flex flex-col items-center justify-center min-h-20 bg-gradient-to-t from-black to-[#ff1d89] gap-3">
+        <div class="mt-2 w-full flex items-center justify-end mb-0">
+            <div class="flex items-end flex-col">
+                <img src="../img/settings.png" alt="" class="size-10 mr-4 cursor-pointer" id="settingsIcon">
+                <div class="grid-cols-3 grid gap-2 mt-4 mr-4 hidden" id="settingsPanel">
+                    <div class="size-6 bg-[#FF1D89] hover:scale-115 cursor-pointer" id="selectColor" data-color="#FF1D89"></div>
+                    <div class="size-6 bg-[#C06CFF] hover:scale-115 cursor-pointer" id="selectColor2" data-color="#C06CFF"></div>
+                    <div class="size-6 bg-[#101014] hover:scale-115 cursor-pointer" id="selectColor3" data-color="#101014"></div>
+                    <div class="size-6 bg-[#FAF7F8] hover:scale-115 cursor-pointer" id="selectColor4" data-color="#FAF7F8"></div>
+                    <div class="size-6 bg-[#57FFD9] hover:scale-115 cursor-pointer" id="selectColor5" data-color="#57FFD9"></div>
+                    <div class="size-6 bg-[#FF7F50] hover:scale-115 cursor-pointer" id="selectColor6" data-color="#FF7F50"></div>
+                </div>
+            </div>
+        </div>
+
         <div>
-            <div id="connection-status" class="mt-10 text-center p-4">
-                <h3 class="text-black text-2xl font-bold">Estado de Conexión:<span id="connectionStatus"
+            <div id="connection-status" class="mt-2 text-center p-4">
+                <h3 class="text-black text-2xl font-bold">Estado de Conexión: <span id="connectionStatus"
                         class="status-disconnected">Desconectado</span></h3>
             </div>
             <!-- Authentication Section -->
@@ -80,9 +94,9 @@
             </div>
         </div>
 
-        <div id="player" class="flex flex-row w-full gap-6 max-w-[90%] mx-auto  mb-20 hidden">
+        <div id="player" class="flex flex-row w-full gap-6 max-w-[90%] mx-auto mb-20 hidden">
             <!-- Search Section -->
-            <div id="searchSection" class="search-section w-full max-w-2xl mx-auto mt-10">
+            <div id="searchSection" class="search-section w-full max-w-2xl mx-auto mt-2">
                 <div class="search-header flex flex-col gap-4 items-baseline m-4">
                     <h3 class="text-xl font-bold text-white">Buscar música</h3>
                     <div class="search-bar flex w-[50%] gap-2">
@@ -184,7 +198,7 @@
             </div>
 
             <!-- Playlists Section -->
-            <div id="playlistsSection" class="playlists-section w-full max-w-2xl mx-auto mt-10">
+            <div id="playlistsSection" class="playlists-section w-full max-w-2xl mx-auto mt-2">
                 <h3 class="text-xl font-bold text-white mb-4 ">Tus Playlists</h3>
                 <div id="playlistsList" class="playlists-list grid grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- Las playlists aparecerán aquí -->

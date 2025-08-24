@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link rel="stylesheet" href="../CSS/Pago.css">
+    <link rel="icon" href="../img/LogoPNG.png" type="image/png">
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+</head>
+
+<body class="">
+
+    <header>
+        <img src="../img/Starlight.png" alt="logo">
+    </header>
+
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="../index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="./Productos.html">
+                <h3>Productos</h3>
+            </a>
+            <a href="./Servicios.html">
+                <h3>Servicios</h3>
+            </a>
+            <a href="">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="./Contacto.html">
+                <h3>Contacto</h3>
+            </a>
+            <a href="">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+
+        <div id="espaciador"></div>
+
+        <div id="burger">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <main>
+        <div>
+        <h1>Pago</h1>
+        <h3 class="mb-4"><span class="degradado">Starlight</span></h3>
+
+        <div class="container2 bg-gradient-to-b from-black to-[#ff1d89]">
+            <div class="grid grid-cols-2 gap-4 bg-gradient-to-t">
+                <div class="">
+                    <h2 class="text-2xl">Carrito</h2>
+                    <p>Aquí puedes realizar tu pago de manera segura y rápida.</p>
+                </div>
+                <div class="flex flex-col" id="pagoTarjeta">
+                    <h2 class="text-2xl">Pago con Tarjeta</h2>
+                    <p>Correo Electronico</p>
+                    <input type="text" placeholder="Ingresa tu correo electrónico" class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="correo">
+                    <p class="mt-6">Informacion de la Tarjeta</p>
+                    <div class="flex flex-col">
+                        <input type="text" placeholder="Número de tarjeta" class="w-[80%] border-2 border-b-[#FAF7F8] p-2 rounded-md mb-2" id="numTarjeta">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="month"  class="w-[100%] border-2 border-[#FAF7F8] p-2 rounded-md" id="vencimiento" title="Fecha de vencimiento">
+                            <input type="text" placeholder="CVV" class="w-[60%] border-2 border-[#FAF7F8] p-2 rounded-md tracking-[2px]" id="cvv">
+                        </div>
+                    </div>
+                    <p class="mt-6">Nombre de la Tarjeta</p>
+                    <input type="text" placeholder="Nombre en la tarjeta" class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="nombreTarjeta">
+                    <p class="mt-6">Dirección</p>
+                    <input type="text" placeholder="Ingrese su dirección" class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="direccion">
+
+                    <button class="bg-white text-black p-2 rounded-md mt-6 w-[80%] cursor-pointer hover:scale-105 hover:bg-black transition-transform">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="textos">
+            <h2 id="titulo">Gracias por visitar</h2>
+            <img src="../img/LogoPNG.png" alt="">
+            <h3>Starlight</h3>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+        <script>
+            new CircleType(document.getElementById('titulo')).radius(190);
+        </script>
+
+        <p>© 2025 Starlight – Hecho con pasión por la música 🎧</p>
+    </footer>
+
+    <!-- Contenedor para notificaciones Toastr -->
+    <div id="toast-container" class="toast-bottom-right" aria-live="polite" role="alert"></div>
+
+    <!-- Scripts -->
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "./img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="../js/Pago.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- JQuery-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- Notificaciones Toastr -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+   
+   <!-- Configuración de Toastr -->
+   <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "4000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "tapToDismiss": true,
+            "toastClass": "toast",
+            "containerId": "toast-container",
+            "target": "body"
+        };
+   </script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@ const merch = [
   {
     id: 1,
     nombre: "Korn x Bratz",
-    imagen: "../img/bratzXkornFront.png",
+    imagen: "../img/Merch/bratzXkornFront.png",
     imagen2: "/img/Merch/bratzXkornBack.png",
     descripcion: "Tank top edición limitada de la combinación entre Korn y Bratz.",
     precio: 8000,

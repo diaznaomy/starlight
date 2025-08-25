@@ -14,7 +14,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 0px #ff1d8e, 0 0 0px #57FFD9;
+            }
+
+            50% {
+                box-shadow: 0 0 40px #ff1d8e, 0 0 80px #57FFD9;
+            }
+
+            100% {
+                box-shadow: 0 0 0px #ff1d8e, 0 0 0px #57FFD9;
+            }
+        }
+
+        .animate-glow {
+            animation: glow 1.5s ease-in-out;
+        }
+
         .carrusel-img {
             height: 500px;
             object-fit: cover;
@@ -65,9 +84,10 @@
             <div class="promo-image">
                 <img src="./img/poster.png" alt="Poster Starlight">
             </div>
-
             <div class="promo-texto">
-                <h2><span class="marca">✨ Starlight:</span></h2>
+                <h2 id="main-h2"
+                    class="bg-[#101014] text-[#faf7f8] text-base w-80 h-20 font-medium flex items-center justify-center text-center rounded-xl mx-auto mb-4" style="font-size: 4em;">
+                    ✨ Starlight:</h2>
                 <h3><span class="degradado">tu música, tu vibra, tu merch.</span></h3>
 
                 <p>
@@ -81,7 +101,8 @@
         </div>
         <br>
         <img src="./img/title1.png" alt="Merch" class="title-image">
-        <div class="carousel-container py-5 text-white d-flex justify-content-center" style="background: #FAF7F8;
+        <div class="carousel-container py-5 text-white d-flex justify-content-center"
+            style="background: #FAF7F8;
         background: linear-gradient(0deg,rgba(250, 247, 248, 1) 0%, rgba(16, 16, 20, 1) 100%);">
             <div class="carousel slide rounded-4 shadow" id="carouselExampleIndicators" data-bs-ride="carousel"
                 data-bs-interval="2000"
@@ -221,6 +242,10 @@
                 burgerIcon.src = "../img/menu.png";
                 menuOpen = false;
             });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('main-h2').classList.add('animate-glow');
         });
     </script>
 

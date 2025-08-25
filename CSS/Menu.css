@@ -251,4 +251,9 @@ footer h2 {
     header .icons img {
         width: 2em;
     }
+
+    #player{
+        display: flex;
+        flex-direction: column;
+    }
 }

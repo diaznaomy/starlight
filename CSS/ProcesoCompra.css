@@ -46,7 +46,8 @@ header img {
 }
 
 header .icons {
-    margin-left: auto; /* Empuja los íconos a la derecha */
+    margin-left: auto;
+    /* Empuja los íconos a la derecha */
     display: flex;
     gap: 2em;
     align-items: center;
@@ -55,12 +56,13 @@ header .icons {
 }
 
 header .icons img {
-    width: 3em; /* tamaño de los íconos */
+    width: 3em;
+    /* tamaño de los íconos */
     height: auto;
 }
 
-header .icons a:hover{
-    transform: scale(1.1);  
+header .icons a:hover {
+    transform: scale(1.1);
     cursor: poin
 }
 
@@ -126,7 +128,7 @@ header .icons a:hover img {
 }
 
 #navmenu a h3 {
-    font-size: 1.2em !important; 
+    font-size: 1.2em !important;
 }
 
 #navmenu a:hover {
@@ -402,11 +404,15 @@ footer .textos h3 {
         display: flex;
         flex-direction: column !important;
         align-items: center;
+        justify-content: center;
+        text-align: center;
         gap: 2em;
         margin: 1em 0;
         width: 100%;
     }
-    .card, .card2 {
+
+    .card,
+    .card2 {
         display: block !important;
         width: 90%;
         max-width: 400px;
@@ -414,34 +420,44 @@ footer .textos h3 {
         padding: 1.5em;
         box-sizing: border-box;
     }
-    .card img, .card2 img {
+
+    .card img,
+    .card2 img {
         width: 100%;
-        max-width: 300px; /* aún más grande */
+        max-width: 300px;
+        /* aún más grande */
         height: auto;
         margin: 0 auto 1em auto;
         display: block;
     }
-    .name, .name2,
-    .info, .info2,
-    .description, .description2 {
+
+    .name,
+    .name2,
+    .info,
+    .info2,
+    .description,
+    .description2 {
         text-align: center;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
-    .description, .description2 {
+
+    .description,
+    .description2 {
         margin-top: -2.1em;
     }
+
     h1 {
         font-size: 1.5em;
-        text-align: left;
+        text-align: center;
         margin-left: 0.5em;
+        align-items: center;
     }
+
     .degradado {
-        font-size: 1.2em;
-        text-align: left;
-        margin-left: 0.5em;
-        display: block;
+        font-size: 1em;
+        text-align: center;
     }
 }
 
@@ -450,25 +466,25 @@ footer .textos h3 {
         gap: 1em;
         width: 100%;
     }
-    .card, .card2 {
+
+    .card,
+    .card2 {
         width: 98%;
         max-width: 320px;
         padding: 1em;
         margin-bottom: 1em;
     }
-    .card img, .card2 img {
-        max-width: 220px; /* aún más grande en móviles */
+
+    .card img,
+    .card2 img {
+        max-width: 220px;
+        /* aún más grande en móviles */
         margin-bottom: 0.5em;
-    }
-    h1 {
-        font-size: 1.1em;
-        text-align: left;
-        margin-left: 0.5em;
     }
     .degradado {
         font-size: 1em;
-        text-align: left;
-        margin-left: 0.5em;
+        text-align: center;
+        margin-left: 10%;
     }
 }
 
@@ -480,32 +496,20 @@ footer .textos h3 {
         font-size: 1em;
         padding: 1em;
     }
+
     .container2 p {
         font-size: 1em;
         text-align: center;
         margin-bottom: 1em;
     }
-    .highlight, .highlight2 {
+
+    .highlight,
+    .highlight2 {
         font-size: 1em;
     }
 }
 
-/* Responsive para títulos */
-@media (max-width: 900px) {
-    h1 {
-        font-size: 1.5em;
-        text-align: center;
-    }
-    h3 {
-        font-size: 1.2em;
-        text-align: center;
-    }
-    .degradado {
-        font-size: 1.2em;
-        margin-left: 0px;
-        text-align: center;
-    }
-}
+
 
 @media (max-width: 900px) {
     header {
@@ -515,12 +519,14 @@ footer .textos h3 {
         flex-direction: column;
         margin-bottom: 100px;
     }
+
     header img {
         width: 14em;
         margin-top: 1em;
         margin-left: 50%;
         transform: translateX(-50%);
     }
+
     header .icons img {
         width: 2em;
     }

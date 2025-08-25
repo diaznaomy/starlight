@@ -94,7 +94,6 @@ header .icons a:hover img {
         font-family: 'Dream Orphans', sans-serif !important;
     }
 }
-
 #burger {
     display: none;
     cursor: pointer;
@@ -120,14 +119,14 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-    font-size: 0.9em !important;
+    font-size: 1.2 !important;
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
-    font-size: 7em !important;
+    font-size: 1.2em !important; 
 }
 
 #navmenu a:hover {
@@ -135,6 +134,7 @@ header .icons a:hover img {
     background-color: #ff7f50;
     color: #faf7f8;
 }
+
 
 
 /* Espaciador opcional */

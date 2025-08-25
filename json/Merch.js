@@ -74,8 +74,8 @@ const merch = [
   {
     id: 7,
     nombre: "Hot To Go",
-    imagen: "/img/Merch/hotToGo1.png",
-    imagen2: "/img/Merch/hotToGo2.png",
+    imagen: "../img/Merch/hotToGo1.png",
+    imagen2: "../img/Merch/hotToGo2.png",
     descripcion: "Tote bag con diseño de Hot To Go de Chappel Roan.",
     precio: 6000,
     disponible: true,

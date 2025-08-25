@@ -39,12 +39,8 @@ header img {
 }
 
 header .icons {
-<<<<<<< HEAD
-    margin-left: auto; /* Empuja los íconos a la derecha */
-=======
     margin-left: auto;
     /* Empuja los íconos a la derecha */
->>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
     display: flex;
     gap: 2em;
     align-items: center;
@@ -70,45 +66,6 @@ header .icons a img {
 header .icons a:hover img {
     transform: scale(1.2);
 }
-<<<<<<< HEAD
-
-@media (max-width: 900px) {
-    header {
-        height: 90px;
-        padding: 0 1em;
-    }
-    header img {
-        width: 14em;
-        margin-top: 1em;
-        margin-left: 50%;
-        transform: translateX(-50%);
-    }
-    header .icons img {
-        width: 2em;
-    }
-}
-=======
->>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
-
-@media (max-width: 600px) {
-    header {
-        height: 60px;
-        padding: 0 0.5em;
-    }
-    header img {
-        width: 16em;
-        margin-top: 3em;
-        margin-left: 50%;
-        transform: translateX(-50%);
-    }
-    header .icons img {
-        width: 1.5em;
-        margin-left: -3em;
-    }
-    header .icons {
-        gap: 2.5em;
-    }
-}
 
 /* ------------------- */
 /* Menu */
@@ -130,15 +87,8 @@ header .icons a:hover img {
     z-index: 999;
     margin-top: 4em;
     flex-direction: row;
-<<<<<<< HEAD
-=======
-
-    h3 {
-        box-sizing: border-box;
-        font-family: 'Dream Orphans', sans-serif !important;
-    }
->>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
 }
+
 #burger {
     display: none;
     cursor: pointer;
@@ -164,33 +114,21 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-<<<<<<< HEAD
-    font-size: 3em !important;
-    font-weight: bold !important;
-=======
-    font-size: 1.2 !important;
+    font-size: 0.2em !important;
     font-weight: bold;
->>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
-<<<<<<< HEAD
-    font-size: 0.4em !important; 
-    font-family: 'Dream Orphans', sans-serif !important;
-=======
-    font-size: 1.2em !important; 
->>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
+    font-size: 6.5em !important;
 }
-
 
 #navmenu a:hover {
     transform: scale(1.05);
     background-color: #ff7f50;
     color: #faf7f8;
 }
-
 
 
 /* Espaciador opcional */
@@ -245,19 +183,12 @@ header .icons a:hover img {
     }
 }
 
-@media (max-width: 1100px) {
-    #player {
-        flex-direction: column;
-    }
-}
-
 #menu,
 #navmenu a {
     font-family: 'dream-orphans', sans-serif;
 }
 
 /* Fin Menu */
-
 
 footer {
     background-color: #bf6cfe;

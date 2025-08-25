@@ -122,7 +122,8 @@ header .icons a:hover img {
 }
 
 #navmenu a h3 {
-    font-size: 7em !important; 
+    font-size: 1.3em !important; 
+    font-family: 'Dream Orphans', sans-serif !important;
 }
 
 #navmenu a:hover {

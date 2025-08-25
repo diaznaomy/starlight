@@ -465,11 +465,11 @@ class SpotifyPlayer {
         const playIcon = this.playPauseBtn.querySelector('i');
         if (this.isPlaying) {
             playIcon.className = 'fas fa-pause';
-            this.iconPlayPause.src = '../img/right.png';
+            this.iconPlayPause.src = '../img/pause.png';
             this.applyColor(this.constantColor);
         } else {
             playIcon.className = 'fas fa-play';
-            this.iconPlayPause.src = '../img/pause.png';
+            this.iconPlayPause.src = '../img/right.png';
             this.applyColor(this.constantColor);
         }
         // Update progress

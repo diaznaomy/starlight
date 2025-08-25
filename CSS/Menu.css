@@ -39,7 +39,12 @@ header img {
 }
 
 header .icons {
+<<<<<<< HEAD
     margin-left: auto; /* Empuja los íconos a la derecha */
+=======
+    margin-left: auto;
+    /* Empuja los íconos a la derecha */
+>>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
     display: flex;
     gap: 2em;
     align-items: center;
@@ -48,12 +53,13 @@ header .icons {
 }
 
 header .icons img {
-    width: 3em; /* tamaño de los íconos */
+    width: 3em;
+    /* tamaño de los íconos */
     height: auto;
 }
 
-header .icons a:hover{
-    transform: scale(1.1);  
+header .icons a:hover {
+    transform: scale(1.1);
     cursor: poin
 }
 
@@ -64,6 +70,7 @@ header .icons a img {
 header .icons a:hover img {
     transform: scale(1.2);
 }
+<<<<<<< HEAD
 
 @media (max-width: 900px) {
     header {
@@ -80,6 +87,8 @@ header .icons a:hover img {
         width: 2em;
     }
 }
+=======
+>>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
 
 @media (max-width: 600px) {
     header {
@@ -121,8 +130,15 @@ header .icons a:hover img {
     z-index: 999;
     margin-top: 4em;
     flex-direction: row;
-}
+<<<<<<< HEAD
+=======
 
+    h3 {
+        box-sizing: border-box;
+        font-family: 'Dream Orphans', sans-serif !important;
+    }
+>>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
+}
 #burger {
     display: none;
     cursor: pointer;
@@ -148,15 +164,24 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
+<<<<<<< HEAD
     font-size: 3em !important;
     font-weight: bold !important;
+=======
+    font-size: 1.2 !important;
+    font-weight: bold;
+>>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
+<<<<<<< HEAD
     font-size: 0.4em !important; 
     font-family: 'Dream Orphans', sans-serif !important;
+=======
+    font-size: 1.2em !important; 
+>>>>>>> a7742c06b1f50b9d03ffae89c1729e904eed9e6f
 }
 
 
@@ -165,6 +190,7 @@ header .icons a:hover img {
     background-color: #ff7f50;
     color: #faf7f8;
 }
+
 
 
 /* Espaciador opcional */
@@ -219,6 +245,12 @@ header .icons a:hover img {
     }
 }
 
+@media (max-width: 1100px) {
+    #player {
+        flex-direction: column;
+    }
+}
+
 #menu,
 #navmenu a {
     font-family: 'dream-orphans', sans-serif;
@@ -264,7 +296,7 @@ footer .textos h3 {
     font-family: 'Rosie', sans-serif !important;
 }
 
-footer h2{
+footer h2 {
     font-family: 'Dream Orphans', sans-serif !important;
     font-size: 2em !important;
     color: #FAF7F8;

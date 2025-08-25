@@ -21,7 +21,6 @@ body {
     font-family: 'Dream Orphans', sans-serif !important;
     margin: 0;
 }
-
 header {
     display: flex;
     align-items: center;
@@ -40,8 +39,7 @@ header img {
 }
 
 header .icons {
-    margin-left: auto;
-    /* Empuja los íconos a la derecha */
+    margin-left: auto; /* Empuja los íconos a la derecha */
     display: flex;
     gap: 2em;
     align-items: center;
@@ -50,13 +48,12 @@ header .icons {
 }
 
 header .icons img {
-    width: 3em;
-    /* tamaño de los íconos */
+    width: 3em; /* tamaño de los íconos */
     height: auto;
 }
 
-header .icons a:hover {
-    transform: scale(1.1);
+header .icons a:hover{
+    transform: scale(1.1);  
     cursor: poin
 }
 
@@ -151,10 +148,36 @@ header .icons a:hover img {
     }
 }
 
+@media (max-width: 900px) {
+    header {
+        height: 90px;
+        padding: 0 1em;
+        display: flex;
+        flex-direction: column !important;
+        margin-bottom: 100px;
+    }
+    .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    header img {
+        width: 14em;
+        margin-top: 1em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    header .icons img {
+        width: 2em;
+    }
+}
+
 /* ----------- RESPONSIVE ----------- */
 @media (max-width: 768px) {
     #burger {
         display: block;
+        align-self: right !important;
     }
 
     #navmenu {

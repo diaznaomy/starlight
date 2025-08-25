@@ -505,3 +505,22 @@ footer .textos h3 {
         margin-left: 3em;
     }
 }
+
+@media (max-width: 900px) {
+    header {
+        height: 90px;
+        padding: 0 1em;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
+    header img {
+        width: 14em;
+        margin-top: 1em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    header .icons img {
+        width: 2em;
+    }
+}

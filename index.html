@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="icon" href="../img/LogoPNG.png" type="image/png">
 
     <!-- Bootstrap CSS solo si querés el carrusel bien estilizado -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +26,6 @@
     <header>
         <img src="./img/Starlight.png" alt="logo">
         <div class="icons">
-
             <a href="https://www.instagram.com/"><img src="./img/instagram.png" alt="Instagram"></a>
             <a href="HTML/Pago.html"><img src="./img/carrito-de-compras.png" alt="Carrito"></a>
         </div>
@@ -211,14 +211,14 @@
             navMenu.classList.toggle('active');
 
             // Cambiar ícono
-            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+            burgerIcon.src = menuOpen ? "../img/close.png" : "../img/menu.png";
         });
 
         // Cierra el menú al hacer clic en un enlace (solo en mobile)
         document.querySelectorAll('#navmenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                burgerIcon.src = "./img/menu.png";
+                burgerIcon.src = "../img/menu.png";
                 menuOpen = false;
             });
         });

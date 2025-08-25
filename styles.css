@@ -75,6 +75,9 @@ header .icons a:hover img {
     header {
         height: 90px;
         padding: 0 1em;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
     }
     header img {
         width: 14em;
@@ -87,25 +90,7 @@ header .icons a:hover img {
     }
 }
 
-@media (max-width: 600px) {
-    header {
-        height: 60px;
-        padding: 0 0.5em;
-    }
-    header img {
-        width: 16em;
-        margin-top: 3em;
-        margin-left: 50%;
-        transform: translateX(-50%);
-    }
-    header .icons img {
-        width: 1.5em;
-        margin-left: -4.5em;
-    }
-    header .icons {
-        gap: 2.5em;
-    }
-}
+
 
 /* ------------------- */
 /* Menu */

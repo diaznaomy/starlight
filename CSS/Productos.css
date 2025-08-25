@@ -537,19 +537,24 @@ footer .textos h3 {
     min-width: 120px;
 }
 
+
+
 @media (max-width: 600px) {
     .titulo-categorias-row {
         padding: 0 0.5em;
     }
+
     .categoria-container {
         flex-direction: column;
         align-items: stretch;
         margin-top: 0.5em;
     }
+
     .categoria-label {
         margin-bottom: 0.5em;
         margin-right: 0;
     }
+
     .categoria-dropdown {
         width: 100%;
         min-width: unset;
@@ -628,6 +633,24 @@ footer .textos h3 {
         font-size: 1em;
         padding: 0.5em 1.2em;
     }
+    header {
+        height: 90px;
+        padding: 0 1em;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
+
+    header img {
+        width: 14em;
+        margin-top: 1em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header .icons img {
+        width: 2em;
+    }
 }
 
 @media (max-width: 600px) {
@@ -662,21 +685,15 @@ footer .textos h3 {
     }
 }
 
-@media (max-width: 900px) {
-    header {
-        height: 90px;
-        padding: 0 1em;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 100px;
+
+@media (max-width: 1200px) {
+    .tallas-lista {
+        gap: 0.5em;
     }
-    header img {
-        width: 14em;
-        margin-top: 1em;
-        margin-left: 50%;
-        transform: translateX(-50%);
-    }
-    header .icons img {
-        width: 2em;
+
+    #merch-list{
+        .producto{
+        margin: 10px;
+        }
     }
 }

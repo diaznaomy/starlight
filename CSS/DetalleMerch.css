@@ -871,6 +871,18 @@ main .col-md-9 {
         flex-direction: column;
         margin-bottom: 100px;
     }
+
+    .main-images-row{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
     header img {
         width: 14em;
         margin-top: 1em;

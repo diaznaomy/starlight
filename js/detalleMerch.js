@@ -4,17 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Obtener el parámetro id
     const idParam = urlParams.get("id");
     console.log("Merch ID", idParam);
-    if (!idParam) {
-        merchNoEncontrado();
-        return;
-    }
     // Obtener el producto merch
     const item = merch.find((m) => m.id == idParam);
 
-    if (!item) {
-        merchNoEncontrado();
-        return;
-    }
     console.log("Merch encontrado", item);
     // Mostrar el producto en el HTML
     document.getElementById("title").textContent = item.nombre;
@@ -49,7 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function merchNoEncontrado() {
-    document.getElementById("detalle").classList.add("d-none");
-    document.getElementById("alertNotFound").classList.remove("d-none");
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const idParam = urlParams.get("id");
+    const item = merch.find((m) => m.id == idParam);
+
+    document.getElementById("title").textContent = item.nombre;
+    // ...resto del código...
+});

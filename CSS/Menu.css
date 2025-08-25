@@ -23,17 +23,47 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 140px;
+    padding: 0 2em;
+    background: #101014;
 }
 
 header img {
     width: 25em;
     height: auto;
-    margin-top: 3.5em;
+    margin-top: 2em;
+    margin-left: 34%;
+    margin-right: auto;
+    display: block;
 }
 
+header .icons {
+    margin-left: auto; /* Empuja los íconos a la derecha */
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+}
+
+header .icons img {
+    width: 3em; /* tamaño de los íconos */
+    height: auto;
+}
+
+header .icons a:hover{
+    transform: scale(1.1);  
+    cursor: poin
+}
+
+header .icons a img {
+    transition: transform 0.2s;
+}
+
+header .icons a:hover img {
+    transform: scale(1.2);
+}
 
 
 /* ------------------- */
@@ -92,6 +122,10 @@ header img {
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
+}
+
+#navmenu a h3 {
+    font-size: 7em !important; 
 }
 
 #navmenu a:hover {

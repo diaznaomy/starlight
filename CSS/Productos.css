@@ -29,26 +29,33 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 140px;
+    padding: 0 2em;
+    background: #101014;
 }
 
 header img {
     width: 25em;
     height: auto;
-    margin-top: 3.5em;
+    margin-top: 2em;
+    margin-left: 34%;
+    margin-right: auto;
+    display: block;
 }
 
 header .icons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    margin-left: auto; /* Empuja los íconos a la derecha */
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
 }
+
 header .icons img {
-    width: 2.5em;
+    width: 3em; /* tamaño de los íconos */
     height: auto;
-    margin-left: 15px;
 }
 
 header .icons a:hover{
@@ -63,8 +70,6 @@ header .icons a img {
 header .icons a:hover img {
     transform: scale(1.2);
 }
-
-
 
 /* ------------------- */
 /* Menu */
@@ -117,6 +122,10 @@ header .icons a:hover img {
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
+}
+
+#navmenu a h3 {
+    font-size: 6.5em !important; 
 }
 
 #navmenu a:hover {
@@ -431,6 +440,12 @@ footer .textos h3 {
 
 .talla-btn:hover,
 .talla-btn.active {
+    background: #c06cff;
+    color: #fff;
+    border-color: #c06cff;
+}
+
+.talla-btn.selected {
     background: #c06cff;
     color: #fff;
     border-color: #c06cff;

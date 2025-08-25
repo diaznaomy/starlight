@@ -221,4 +221,77 @@ document.addEventListener('DOMContentLoaded', function() {
             'Procesando pago...')
         }
     });
+
+    function renderCart() {
+        const detailDiv = document.getElementById("detail");
+        const totalItems = document.getElementById("total-items");
+        const totalCompra = document.getElementById("total-compra");
+        const cart = JSON.parse(localStorage.getItem("compra")) || [];
+
+        let total = 0;
+        let items = 0;
+        detailDiv.innerHTML = "";
+
+        cart.forEach((item, idx) => {
+            const subtotal = item.price * item.quantity;
+            total += subtotal;
+            items += item.quantity;
+
+            const row = document.createElement("div");
+            row.className = "row mb-4 d-flex justify-content-between align-items-center";
+            row.innerHTML = `
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                    <h6 class="text-muted name-libro">${item.name}${item.talla ? " (" + item.talla + ")" : ""}</h6>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                    <input min="1" name="quantity" value="${item.quantity}" type="number"
+                        class="form-control form-control-sm quantity-libro" data-idx="${idx}" />
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                    <h6 class="mb-0 price-libro">$${item.price.toFixed(2)}</h6>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                    <h6 class="mb-0 subtotal-libro">$${subtotal.toFixed(2)}</h6>
+                </div>
+                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                    <button type="button" class="btn btn-secondary btn-remove" data-idx="${idx}">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            `;
+            detailDiv.appendChild(row);
+        });
+
+        totalItems.textContent = `${items} item(s)`;
+        totalCompra.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Renderiza el carrito al cargar
+    renderCart();
+
+    // Eliminar producto del carrito sin recargar
+    document.getElementById("detail").addEventListener("click", function(e) {
+        if (e.target.closest(".btn-remove")) {
+            const idx = e.target.closest(".btn-remove").dataset.idx;
+            const cart = JSON.parse(localStorage.getItem("compra")) || [];
+            cart.splice(idx, 1);
+            localStorage.setItem("compra", JSON.stringify(cart));
+            toastr.info("Producto eliminado del carrito");
+            renderCart();
+        }
+    });
+
+    // Cambiar cantidad sin recargar
+    document.getElementById("detail").addEventListener("change", function(e) {
+        if (e.target.classList.contains("quantity-libro")) {
+            const idx = e.target.dataset.idx;
+            let value = parseInt(e.target.value, 10);
+            if (isNaN(value) || value < 1) value = 1;
+            const cart = JSON.parse(localStorage.getItem("compra")) || [];
+            cart[idx].quantity = value;
+            localStorage.setItem("compra", JSON.stringify(cart));
+            toastr.success("Cantidad actualizada");
+            renderCart();
+        }
+    });
 });

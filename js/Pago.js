@@ -6,6 +6,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const correoInput = document.getElementById('correo');
     const direccionInput = document.getElementById('direccion');
     const pagarBtn = document.querySelector('button');
+    const envioPostalInput = document.getElementById('envioPostal');
+    const direccionEnvioInput = document.getElementById('direccionEnvio');
+
+    let envioAplicado = false;
+    const COSTO_ENVIO = 2500;
+
+    if (envioPostalInput) {
+        envioPostalInput.addEventListener('change', function() {
+            if (this.checked && !envioAplicado) {
+                agregarCostoEnvio();
+                envioAplicado = true;
+                direccionEnvioInput.classList.remove('hidden');
+            } else if (!this.checked && envioAplicado) {
+                quitarCostoEnvio();
+                envioAplicado = false;
+                direccionEnvioInput.classList.add('hidden');
+            }
+        });
+    }
+
+    function obtenerTotalSinEnvio() {
+        // Calcula el total del carrito sin el costo de envío
+        const cart = JSON.parse(localStorage.getItem("compra")) || [];
+        let total = 0;
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+        });
+        return total;
+    }
+
+    function agregarCostoEnvio() {
+        const totalCompra = document.getElementById('total-compra');
+        let total = obtenerTotalSinEnvio();
+        total += COSTO_ENVIO;
+        totalCompra.textContent = `$${total.toFixed(2)}`;
+    }
+
+    function quitarCostoEnvio() {
+        const totalCompra = document.getElementById('total-compra');
+        let total = obtenerTotalSinEnvio();
+        totalCompra.textContent = `$${total.toFixed(2)}`;
+    }
 
     // Función para mostrar errores
     function mostrarError(elemento) {
@@ -214,6 +256,13 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarError(direccionInput);
             formularioValido = false;
         }
+
+        if (!direccionEnvioInput.value.trim() && envioPostalInput.checked) {
+            toastr.error(`La dirección de envío: "${direccionEnvioInput.value}" es inválida`,
+            'Dirección Invalida')
+            mostrarError(direccionEnvioInput);
+            formularioValido = false;
+        }
         
         // Si todo es válido, proceder con el pago
         if (formularioValido) {
@@ -263,7 +312,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         totalItems.textContent = `${items} item(s)`;
-        totalCompra.textContent = `$${total.toFixed(2)}`;
+
+        // Si el envío postal está marcado, suma el costo de envío
+        let totalFinal = total;
+        if (envioPostalInput && envioPostalInput.checked) {
+            totalFinal += COSTO_ENVIO;
+        }
+        totalCompra.textContent = `$${totalFinal.toFixed(2)}`;
     }
 
     // Renderiza el carrito al cargar

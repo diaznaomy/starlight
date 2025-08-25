@@ -10,6 +10,24 @@
         body {
             background-color: #101014;
         }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px #ff1d89, 0 0 20px #ff1d89, 0 0 30px #FF7F50;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #ff1d89, 0 0 40px #ff1d89, 0 0 60px #FF7F50;
+            }
+
+            100% {
+                box-shadow: 0 0 10px #ff1d89, 0 0 20px #ff1d89, 0 0 30px #FF7F50;
+            }
+        }
+
+        .animate-glow {
+            animation: glow 2s infinite alternate;
+        }
     </style>
     <link rel="stylesheet" href="../CSS/Servicios.css">
 </head>
@@ -75,7 +93,7 @@
     </section>
 
     <!-- Beneficios -->
-    <section class="py-20 px-6 bg-[#FF1D89]">
+    <section class="py-20 px-6 bg-[#FF1D89]" style="margin-top: -5em;">
         <h2 class="text-3xl font-bold text-center mb-12 text-[#FAF7F8]">¿Por qué elegir Starlight?</h2>
         <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <div class="p-6 rounded-2xl shadow-lg text-center" style="background-color:#C06CFF;">
@@ -94,18 +112,27 @@
     </section>
 
     <!-- CTA Final -->
-    <section class="py-20 px-6 bg-[#57FFD9] text-center" style="background: linear-gradient(180deg, #FF1D89 0%, #57FFD9 100%);">
-        <h2 class="text-4xl font-bold mb-6 text-[#101014]">Tu música, tu mundo 🎶</h2>
-        <p class="text-lg text-[#101014] mb-8">Únete a la experiencia Starlight y lleva la música contigo.</p>
-        <a href="#planes">
-            <button class="relative inline-block font-medium group py-1.5 px-2.5 ">
-                <span
-                    class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-[#FF7F50] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                <span
-                    class="absolute inset-0 w-full h-full bg-[#FF1D89] border border-indigo-600 group-hover:bg-[#FF1D89]"></span>
-                <span class="relative text-[#FAF7F8] ">Suscribirme</span>
-            </button>
-        </a>
+    <section class="flex items-center justify-center min-h-screen px-6"
+        style="background: linear-gradient(180deg, #FF1D89 0%, #57FFD9 100%); margin-top: -7em;">
+        <!-- CUADRO GLASS + GLOW -->
+        <div
+            class="bg-white/25 backdrop-blur-lg border border-white/20 text-center p-10 rounded-2xl animate-glow max-w-md">
+            <h2 class="text-4xl font-bold mb-6 text-[#101014] drop-shadow-md">
+                Tu música, tu mundo 🎶
+            </h2>
+            <p class="text-lg text-[#101014] mb-8 drop-shadow-md">
+                Únete a la experiencia Starlight y lleva la música contigo.
+            </p>
+            <a href="#planes">
+                <button class="relative inline-block font-medium group py-1.5 px-2.5">
+                    <span
+                        class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-[#FF7F50] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span
+                        class="absolute inset-0 w-full h-full bg-[#FF1D89] border border-indigo-600 group-hover:bg-[#FF1D89]"></span>
+                    <span class="relative text-[#FAF7F8]">Suscribirme</span>
+                </button>
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->

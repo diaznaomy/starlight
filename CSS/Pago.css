@@ -24,18 +24,47 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 140px;
+    padding: 0 2em;
+    background: #101014;
 }
 
 header img {
     width: 25em;
     height: auto;
-    margin-top: 3.5em;
+    margin-top: 2em;
+    margin-left: 34%;
+    margin-right: auto;
+    display: block;
 }
 
+header .icons {
+    margin-left: auto; /* Empuja los íconos a la derecha */
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+}
 
+header .icons img {
+    width: 3em; /* tamaño de los íconos */
+    height: auto;
+}
+
+header .icons a:hover{
+    transform: scale(1.1);  
+    cursor: poin
+}
+
+header .icons a img {
+    transition: transform 0.2s;
+}
+
+header .icons a:hover img {
+    transform: scale(1.2);
+}
 
 /* ------------------- */
 /* Menu */
@@ -93,6 +122,10 @@ header img {
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
+}
+
+#navmenu a h3 {
+    font-size: 7em !important; 
 }
 
 #navmenu a:hover {
@@ -161,6 +194,41 @@ header img {
 
 /* Fin Menu */
 
+.breadcrumb-detalle {
+    font-family: 'Shrikhand', 'Dream Orphans', cursive;
+    font-size: 1.25em;
+    color: #fff;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    margin-left: 2em;
+}
+
+.breadcrumb-link {
+    color: #fff;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    border-bottom: 3px solid #fff;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.breadcrumb-link:hover {
+    color: #c06cff;
+    border-bottom: 3px solid #c06cff;
+}
+
+.breadcrumb-sep {
+    margin: 0 0.2em;
+}
+
+.breadcrumb-actual {
+    font-style: italic;
+    font-weight: bold;
+}
+
 h1,
 h4,
 h5 {
@@ -169,6 +237,22 @@ h5 {
     text-align: center;
     margin-top: 2em;
     margin-left: -1.5em;
+}
+
+h2 {
+    font-size: 2.5em !important;
+}
+
+h7 {
+    font-family: 'Dream Orphans', sans-serif !important;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .degradado {
@@ -184,7 +268,7 @@ h5 {
 }
 
 .container2 {
-    max-width: 80%;
+    max-width: 60%;
     margin: auto;
     padding: 40px;
     border-radius: 20px;
@@ -290,3 +374,15 @@ footer h2 {
     color: #FAF7F8;
     margin-bottom: 10px;
 }
+
+/* Chrome, Edge, Opera */
+input[type="month"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Firefox */
+input[type="month"]::-moz-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Safari (usa el de Chrome) */

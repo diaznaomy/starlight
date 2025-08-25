@@ -9,13 +9,17 @@
     <link rel="icon" href="../img/LogoPNG.png" type="image/png">
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body class="">
-
     <header>
         <img src="../img/Starlight.png" alt="logo">
+        <div class="icons">
+
+            <a href="https://www.instagram.com/"><img src="../img/instagram.png" alt="Instagram"></a>
+            <a href="../HTML/Pago.html"><img src="../img/carrito-de-compras.png" alt="Carrito"></a>
+        </div>
     </header>
 
     <nav id="menu">
@@ -35,7 +39,7 @@
             <a href="./Contacto.html">
                 <h3>Contacto</h3>
             </a>
-            <a href="">
+            <a href="./AcercaDe.html">
                 <h3>Acerca de</h3>
             </a>
         </div>
@@ -48,37 +52,83 @@
     </nav>
 
     <main>
+        <div class="breadcrumb-detalle mb-4">
+            <a href="./Productos.html" class="breadcrumb-link">
+                <span><strong>Productos</strong></span>
+            </a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-actual"><strong>Carrito de Compras</strong></span>
+        </div>
         <div>
-        <h1>Pago</h1>
-        <h3 class="mb-4"><span class="degradado">Starlight</span></h3>
+            <h1>Pago</h1>
+            <h3 class="mb-4"><span class="degradado">Starlight</span></h3>
 
-        <div class="container2 bg-gradient-to-b from-black to-[#ff1d89]">
-            <div class="grid grid-cols-2 gap-4 bg-gradient-to-t">
-                <div class="">
-                    <h2 class="text-2xl">Carrito</h2>
-                    <p>Aquí puedes realizar tu pago de manera segura y rápida.</p>
-                </div>
-                <div class="flex flex-col" id="pagoTarjeta">
-                    <h2 class="text-2xl">Pago con Tarjeta</h2>
-                    <p>Correo Electronico</p>
-                    <input type="text" placeholder="Ingresa tu correo electrónico" class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="correo">
-                    <p class="mt-6">Informacion de la Tarjeta</p>
-                    <div class="flex flex-col">
-                        <input type="text" placeholder="Número de tarjeta" class="w-[80%] border-2 border-b-[#FAF7F8] p-2 rounded-md mb-2" id="numTarjeta">
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="month"  class="w-[100%] border-2 border-[#FAF7F8] p-2 rounded-md" id="vencimiento" title="Fecha de vencimiento">
-                            <input type="text" placeholder="CVV" class="w-[60%] border-2 border-[#FAF7F8] p-2 rounded-md tracking-[2px]" id="cvv">
+            <div class="container2 bg-gradient-to-b from-black to-[#ff1d89]">
+                <div class="grid grid-cols-2 gap-10 bg-gradient-to-t">
+                    <div class="">
+                        <h2 class="text-2xl">Carrito</h2>
+                        <p>Aquí puedes realizar tu pago de manera segura y rápida.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-5">
+                            <h7 class="fw-bold mb-0">Compra</h7>
+                            <h6 class="fw-bold mb-0" id="total-items"></h6>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row mb-4 d-flex justify-content-between text-primary">
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                <h6 class="fw-bold">Producto</h6>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                <h6 class="fw-bold">Cantidad</h6>
+                            </div>
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                <h6 class="fw-bold">Precio</h6>
+                            </div>
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                <h6 class="fw-bold">Subtotal</h6>
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-xl-1 text-end"></div>
+                        </div>
+                        <hr class="my-4">
+                        <!-- Detalle de compra dinámico -->
+                        <div id="detail"></div>
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-2 col-xl-7 offset-lg-1 text-end">
+                                <h7 class="mb-0">Total</h7>
+                            </div>
+                            <div class="col-md-3 col-lg-2 col-xl-3 offset-lg-1">
+                                <h7 class="mb-0" id="total-compra"></h7>
+                            </div>
                         </div>
                     </div>
-                    <p class="mt-6">Nombre de la Tarjeta</p>
-                    <input type="text" placeholder="Nombre en la tarjeta" class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="nombreTarjeta">
-                    <p class="mt-6">Dirección</p>
-                    <input type="text" placeholder="Ingrese su dirección" class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="direccion">
+                    <div class="flex flex-col" id="pagoTarjeta">
+                        <h2 class="text-2xl">Pago con Tarjeta</h2>
+                        <p>Correo Electronico</p>
+                        <input type="text" placeholder="Ingresa tu correo electrónico"
+                            class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="correo">
+                        <p class="mt-6">Informacion de la Tarjeta</p>
+                        <div class="flex flex-col">
+                            <input type="text" placeholder="Número de tarjeta"
+                                class="w-[80%] border-2 border-b-[#FAF7F8] p-2 rounded-md mb-2" id="numTarjeta">
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="month" class="w-[100%] border-2 border-[#FAF7F8] p-2 rounded-md"
+                                    id="vencimiento" title="Fecha de vencimiento">
+                                <input type="text" placeholder="CVV"
+                                    class="w-[60%] border-2 border-[#FAF7F8] p-2 rounded-md tracking-[2px]" id="cvv">
+                            </div>
+                        </div>
+                        <p class="mt-6">Nombre de la Tarjeta</p>
+                        <input type="text" placeholder="Nombre en la tarjeta"
+                            class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="nombreTarjeta">
+                        <p class="mt-6">Dirección</p>
+                        <input type="text" placeholder="Ingrese su dirección"
+                            class="w-[80%] border-2 border-[#FAF7F8] p-2 rounded-md" id="direccion">
 
-                    <button class="bg-white text-black p-2 rounded-md mt-6 w-[80%] cursor-pointer hover:scale-105 hover:bg-black transition-transform">Pagar</button>
+                        <button
+                            class="bg-white text-black p-2 rounded-md mt-6 w-[80%] cursor-pointer hover:scale-105 hover:bg-black transition-transform">Pagar</button>
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 
     <footer>
@@ -126,12 +176,14 @@
     <script src="../js/Pago.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- JQuery-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <!-- Notificaciones Toastr -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-   
-   <!-- Configuración de Toastr -->
-   <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Notificaciones Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- Configuración de Toastr -->
+    <script>
         toastr.options = {
             "closeButton": true,
             "debug": false,
@@ -153,7 +205,13 @@
             "containerId": "toast-container",
             "target": "body"
         };
-   </script>
+    </script>
+    <!-- Scripts para la lógica de merch -->
+    <script src="../json/Merch.js"></script>
+    <script src="../js/compra.js"></script>
+    <script src="../js/listaMerch.js"></script>
+    <script src="../js/detalleMerch.js"></script>
+    <script src="../js/detalleCompra.js"></script>
 </body>
 
 </html>

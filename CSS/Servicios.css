@@ -269,4 +269,9 @@ header .icons a:hover img {
     header .icons img {
         width: 2em;
     }
+    .g-recaptcha {
+        display: inline-block;
+        transform: scale(0.77);
+        transform-origin: 0 0;
+    }
 }

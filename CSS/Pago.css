@@ -112,14 +112,14 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-    font-size: 0.9em !important;
+    font-size: 1.2 !important;
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
-    font-size: 1.3em !important; 
+    font-size: 1.2em !important;
     font-family: 'Dream Orphans', sans-serif !important;
 }
 
@@ -409,6 +409,12 @@ input[type="month"]::-moz-calendar-picker-indicator {
 @media (max-width: 1100px) {
     #contenedorPago {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .degradado {
+        margin-left: 20%;
     }
 }
 

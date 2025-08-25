@@ -513,6 +513,49 @@ footer .textos h3 {
     gap: 2em;
 }
 
+/* Responsive categorías debajo del h2 */
+.titulo-categorias-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    padding: 0 1em;
+}
+
+.categoria-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.categoria-label {
+    margin-right: 0.5em;
+}
+
+.categoria-dropdown {
+    min-width: 120px;
+}
+
+@media (max-width: 600px) {
+    .titulo-categorias-row {
+        padding: 0 0.5em;
+    }
+    .categoria-container {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 0.5em;
+    }
+    .categoria-label {
+        margin-bottom: 0.5em;
+        margin-right: 0;
+    }
+    .categoria-dropdown {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
 .titulo-categorias-row h2 {
     margin: 0 1em 0 1em;
     margin-top: 2em;

@@ -24,19 +24,19 @@
             <a href="../index.html">
                 <h3>Inicio</h3>
             </a>
-            <a href="Productos.html">
+            <a href="../HTML/Productos.html">
                 <h3>Productos</h3>
             </a>
-            <a href="Servicios.html">
+            <a href="../HTML/Servicios.html">
                 <h3>Servicios</h3>
             </a>
-            <a href="">
+            <a href="./ProcesoCompra.html">
                 <h3>Proceso de compra</h3>
             </a>
-            <a href="Contacto.html">
+            <a href="../HTML/Contacto.html">
                 <h3>Contacto</h3>
             </a>
-            <a href="./AcercaDe.html">
+            <a href="../HTML/AcercaDe.html">
                 <h3>Acerca de</h3>
             </a>
         </div>
@@ -44,7 +44,7 @@
         <div id="espaciador"></div>
 
         <div id="burger">
-            <img src="./img/menu.png" alt="menu" id="burgerIcon">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
         </div>
     </nav>
 
@@ -267,7 +267,7 @@
         document.querySelectorAll('#navmenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                burgerIcon.src = "./img/menu.png";
+                burgerIcon.src = "../img/menu.png";
                 menuOpen = false;
             });
         });

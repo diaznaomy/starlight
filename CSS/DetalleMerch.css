@@ -49,7 +49,8 @@ header img {
 }
 
 header .icons {
-    margin-left: auto; /* Empuja los íconos a la derecha */
+    margin-left: auto;
+    /* Empuja los íconos a la derecha */
     display: flex;
     gap: 2em;
     align-items: center;
@@ -58,12 +59,13 @@ header .icons {
 }
 
 header .icons img {
-    width: 3em; /* tamaño de los íconos */
+    width: 3em;
+    /* tamaño de los íconos */
     height: auto;
 }
 
-header .icons a:hover{
-    transform: scale(1.1);  
+header .icons a:hover {
+    transform: scale(1.1);
     cursor: poin
 }
 
@@ -74,6 +76,172 @@ header .icons a img {
 header .icons a:hover img {
     transform: scale(1.2);
 }
+
+@media (max-width: 900px) {
+    header {
+        height: 90px;
+        padding: 0 1em;
+    }
+
+    header img {
+        width: 14em;
+        margin-top: 1em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header .icons img {
+        width: 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 60px;
+        padding: 0 0.5em;
+    }
+
+    header img {
+        width: 16em;
+        margin-top: 3em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header .icons img {
+        width: 1.5em;
+        margin-left: -3em;
+    }
+
+    header .icons {
+        gap: 2.5em;
+    }
+}
+
+/* ------------------- */
+/* Menu */
+/* ------------------- */
+
+/* ----------- ESTILO GENERAL ----------- */
+#menu {
+    background: #ff1d89;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-top: 4em;
+    flex-direction: row;
+}
+
+#burger {
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+    order: 3;
+    margin-left: auto;
+}
+
+#burger img {
+    width: 2.3em;
+    align-self: right;
+}
+
+#navmenu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#navmenu a {
+    text-decoration: none;
+    color: #101014;
+    font-size: 3em !important;
+    font-weight: bold !important;
+    transition: transform 0.3s ease;
+    border-radius: 0.5em;
+}
+
+#navmenu a h3 {
+    font-size: 0.4em !important;
+    font-family: 'Dream Orphans', sans-serif !important;
+}
+
+
+#navmenu a:hover {
+    transform: scale(1.05);
+    background-color: #ff7f50;
+    color: #faf7f8;
+}
+
+
+/* Espaciador opcional */
+#espaciador {
+    width: 20px;
+}
+
+/* ----------- ANIMACIONES ----------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 768px) {
+    #burger {
+        display: block;
+    }
+
+    #navmenu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    #navmenu.active {
+        display: flex;
+        background: rgba(255, 25, 140, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    #espaciador {
+        display: none;
+    }
+}
+
+#menu,
+#navmenu a {
+    font-family: 'dream-orphans', sans-serif;
+}
+
+/* Fin Menu */
 
 
 /* Breadcrumb */
@@ -395,125 +563,6 @@ header .icons a:hover img {
     color: #fff;
 }
 
-#menu {
-    background: #ff1d89;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    margin-top: 4em;
-    flex-direction: row;
-}
-
-#burger {
-    display: none;
-    cursor: pointer;
-    z-index: 2;
-    order: 3;
-    margin-left: auto;
-}
-
-#burger img {
-    width: 2.3em;
-    align-self: right;
-}
-
-#navmenu {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    flex: 1;
-    justify-content: center;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-#navmenu a {
-    text-decoration: none;
-    color: #101014;
-    font-size: 1em !important;
-    font-weight: bold !important;
-    transition: transform 0.3s ease;
-    border-radius: 0.5em;
-}
-
-#navmenu a h3 {
-    font-size: 7em !important; 
-}
-
-#navmenu a:hover {
-    transform: scale(1.05);
-    background-color: #ff7f50;
-    color: #faf7f8;
-}
-
-
-/* Espaciador opcional */
-#espaciador {
-    width: 20px;
-}
-
-/* ----------- ANIMACIONES ----------- */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ----------- RESPONSIVE ----------- */
-@media (max-width: 768px) {
-    #burger {
-        display: block;
-    }
-
-    #navmenu {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
-        display: none;
-    }
-
-    #navmenu.active {
-        display: flex;
-        background: rgba(255, 25, 140, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        animation: fadeIn 0.3s ease-in-out;
-    }
-
-    #espaciador {
-        display: none;
-    }
-}
-
-#menu,
-#navmenu a {
-    font-family: 'dream-orphans', sans-serif;
-}
-
-/* Fin Menu */
-
-
 main .row.g-4 {
     display: flex;
     justify-content: center;
@@ -540,7 +589,7 @@ main .col-md-9 {
     gap: 1.5em;
 }
 
-.card-body > .row.g-4 > div {
+.card-body>.row.g-4>div {
     min-width: 180px;
 }
 
@@ -586,7 +635,7 @@ main .col-md-9 {
     box-shadow: 0 0 48px #c06cffcc;
 }
 
-.main-images-section { 
+.main-images-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -662,7 +711,8 @@ main .col-md-9 {
     margin: 0 0.3em;
 }
 
-.detalle-info-row, .detalle-info-row2  {
+.detalle-info-row,
+.detalle-info-row2 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -713,7 +763,8 @@ main .col-md-9 {
     gap: 8px;
 }
 
-.btn-like, .btn-dislike {
+.btn-like,
+.btn-dislike {
     background: none;
     border: none;
     padding: 0;
@@ -721,11 +772,13 @@ main .col-md-9 {
     transition: transform 0.1s;
 }
 
-.btn-like:hover, .btn-dislike:hover {
+.btn-like:hover,
+.btn-dislike:hover {
     transform: scale(1.15);
 }
 
-.like-count, .dislike-count {
+.like-count,
+.dislike-count {
     font-size: 1.2rem;
     color: #fff;
     margin: 0;
@@ -809,4 +862,3 @@ main .col-md-9 {
     background: #3fd6b6;
     color: #fff;
 }
-

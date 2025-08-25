@@ -45,7 +45,8 @@ header img {
 }
 
 header .icons {
-    margin-left: auto; /* Empuja los íconos a la derecha */
+    margin-left: auto;
+    /* Empuja los íconos a la derecha */
     display: flex;
     gap: 2em;
     align-items: center;
@@ -54,12 +55,13 @@ header .icons {
 }
 
 header .icons img {
-    width: 3em; /* tamaño de los íconos */
+    width: 3em;
+    /* tamaño de los íconos */
     height: auto;
 }
 
-header .icons a:hover{
-    transform: scale(1.1);  
+header .icons a:hover {
+    transform: scale(1.1);
     cursor: poin
 }
 
@@ -125,7 +127,7 @@ header .icons a:hover img {
 }
 
 #navmenu a h3 {
-    font-size: 6.5em !important; 
+    font-size: 6.5em !important;
 }
 
 #navmenu a:hover {
@@ -554,3 +556,65 @@ footer .textos h3 {
     box-shadow: 0 0 0 2px #c06cff44;
 }
 
+@media (max-width: 900px) {
+    .mask-section {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1em;
+        align-items: center;
+    }
+
+    .mask-images img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-bottom: 1em;
+    }
+
+    .mask-text h2 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .mask-text p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .mask-text button {
+        font-size: 1em;
+        padding: 0.5em 1.2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .mask-section {
+        flex-direction: column;
+        gap: 1em;
+        padding: 0.5em;
+        align-items: center;
+    }
+
+    .mask-images img {
+        width: 100%;
+        max-width: 30em;
+        height: auto;
+        margin-bottom: 0.5em;
+    }
+
+    .mask-text h2 {
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    .mask-text p {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .mask-text button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

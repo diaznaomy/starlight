@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Compra | Starlight</title>
+    <link rel="stylesheet" href="../CSS/Menu.css">
+    <link rel="stylesheet" href="../CSS/AcercaDe.css">
+    <link rel="icon" href="../img/LogoPNG.png" type="image/png">
+    <style>
+        body {
+            background: #101014;
+            background: linear-gradient(180deg, rgba(16, 16, 20, 1) 20%, rgba(255, 29, 137, 1) 100%);
+            color: #FAF7F8;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        h1, .degradado {
+            margin-top: -1em;
+        }
+
+        .container2 {
+            margin-top: 2em;
+        }
+
+        .pasos-container {
+            max-width: 700px;
+            margin: 3em auto;
+            background: #181824;
+            border-radius: 2em;
+            box-shadow: 0 8px 32px rgba(255, 29, 137, 0.12);
+            padding: 2em 2.5em;
+        }
+
+        .paso {
+            margin-bottom: 2em;
+        }
+
+        .paso-numero {
+            font-size: 2em;
+            color: #ff1d89;
+            font-family: 'Shrikhand', 'Dream Orphans', cursive;
+            font-weight: bold;
+        }
+
+        .paso-titulo {
+            font-size: 1.3em;
+            color: #57ffd9;
+            margin-bottom: 0.5em;
+            font-family: 'Dream Orphans', Arial, sans-serif;
+        }
+
+        .paso-descripcion {
+            font-size: 1.1em;
+            color: #faf7f8;
+            text-align: justify;
+        }
+
+        .icono-paso {
+            width: 2em;
+            vertical-align: middle;
+            margin-right: 0.5em;
+        }
+
+        @media (max-width: 600px) {
+            .pasos-container {
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../img/Starlight.png" alt="logo">
+        <div class="icons">
+            <a href="https://www.instagram.com/"><img src="../img/instagram.png" alt="Instagram"></a>
+            <a href="../HTML/Pago.html"><img src="../img/carrito-de-compras.png" alt="Carrito"></a>
+        </div>
+    </header>
+    <nav id="menu">
+        <div id="navmenu">
+            <a href="../index.html">
+                <h3>Inicio</h3>
+            </a>
+            <a href="./Productos.html">
+                <h3>Productos</h3>
+            </a>
+            <a href="./Servicios.html">
+                <h3>Servicios</h3>
+            </a>
+            <a href="./ProcesoCompra.html">
+                <h3>Proceso de compra</h3>
+            </a>
+            <a href="./Contacto.html">
+                <h3>Contacto</h3>
+            </a>
+            <a href="./AcercaDe.html">
+                <h3>Acerca de</h3>
+            </a>
+        </div>
+        <div id="espaciador"></div>
+        <div id="burger">
+            <img src="../img/menu.png" alt="menu" id="burgerIcon">
+        </div>
+    </nav>
+
+    <main>
+        <br>
+        <div class="container2">
+            <h1>¿Cómo comprar en</h1>
+            <h3><span class="degradado">Starlight?</span></h3>
+            <br>
+            <h3 style="text-align:center; color:#57ffd9; font-family:'Dream Orphans',sans-serif;">Sigue estos sencillos
+                pasos:</h3>
+            <br>
+            <div class="paso">
+                <span class="paso-numero">1</span>
+                <span class="paso-titulo"><img src="../img/informacion.png" class="icono-paso" alt="">Explora nuestros
+                    productos</span>
+                <div class="paso-descripcion">
+                    Navega por la sección <b>Productos</b> y descubre toda la merch disponible. Puedes ver fotos,
+                    descripciones, tallas y categorías para encontrar lo que más te guste.
+                </div>
+            </div>
+            <div class="paso">
+                <span class="paso-numero">2</span>
+                <span class="paso-titulo"><img src="../img/anadir-al-carrito.png" class="icono-paso" alt="">Elige tu
+                    producto y agrégalo al carrito</span>
+                <div class="paso-descripcion">
+                    Cuando encuentres algo que te guste, selecciona la talla (si aplica) y la cantidad que deseas. Haz
+                    clic en el botón <b>Añadir al carrito</b> para guardar tu selección.
+                </div>
+            </div>
+            <div class="paso">
+                <span class="paso-numero">3</span>
+                <span class="paso-titulo"><img src="../img/carrito-de-compras.png" class="icono-paso" alt="">Revisa tu
+                    carrito</span>
+                <div class="paso-descripcion">
+                    Haz clic en el ícono del carrito para ver los productos que has seleccionado. Aquí puedes modificar
+                    cantidades, eliminar productos o verificar el total de tu compra.
+                </div>
+            </div>
+            <div class="paso">
+                <span class="paso-numero">4</span>
+                <span class="paso-titulo"><img src="../img/pago.png" class="icono-paso" alt="">Completa tus datos y
+                    realiza el pago</span>
+                <div class="paso-descripcion">
+                    Ingresa tu correo electrónico, dirección y los datos de tu tarjeta. Revisa que toda la información
+                    esté correcta y haz clic en <b>Pagar</b> para finalizar tu compra.
+                </div>
+            </div>
+            <div class="paso">
+                <span class="paso-numero">5</span>
+                <span class="paso-titulo"><img src="../img/envio.png" class="icono-paso" alt="">¡Recibe tu merch!</span>
+                <div class="paso-descripcion">
+                    Una vez realizado el pago, tu pedido será procesado y enviado a la dirección que indicaste. El
+                    tiempo estimado de entrega es de 3 a 4 días laborales.
+                </div>
+            </div>
+            <div class="paso">
+                <span class="paso-numero">6</span>
+                <span class="paso-titulo"><img src="../img/estrella.png" class="icono-paso" alt="">Deja tu reseña</span>
+                <div class="paso-descripcion">
+                    Cuando recibas tu producto, puedes compartir tu experiencia dejando una reseña y calificación en la
+                    página del producto. ¡Tu opinión nos ayuda a mejorar!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="textos">
+            <h2 id="titulo">Gracias por visitar</h2>
+            <img src="../img/LogoPNG.png" alt="">
+            <h3>Starlight</h3>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+        <script>
+            new CircleType(document.getElementById('titulo')).radius(190);
+        </script>
+        <p>© 2025 Starlight – Hecho con pasión por la música 🎧</p>
+    </footer>
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+            burgerIcon.src = menuOpen ? "../img/close.png" : "../img/menu.png";
+        });
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "../img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+</body>
+
+</html>

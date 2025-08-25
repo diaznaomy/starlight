@@ -39,16 +39,6 @@ header img {
 }
 
 header .icons {
-<<<<<<< HEAD
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-header .icons img {
-    width: 2.5em;
-    height: auto;
-    margin-left: 15px;
-=======
     margin-left: auto; /* Empuja los íconos a la derecha */
     display: flex;
     gap: 2em;
@@ -60,7 +50,6 @@ header .icons img {
 header .icons img {
     width: 3em; /* tamaño de los íconos */
     height: auto;
->>>>>>> Nao
 }
 
 header .icons a:hover{
@@ -75,11 +64,42 @@ header .icons a img {
 header .icons a:hover img {
     transform: scale(1.2);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> Nao
+@media (max-width: 900px) {
+    header {
+        height: 90px;
+        padding: 0 1em;
+    }
+    header img {
+        width: 14em;
+        margin-top: 1em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    header .icons img {
+        width: 2em;
+    }
+}
 
+@media (max-width: 600px) {
+    header {
+        height: 60px;
+        padding: 0 0.5em;
+    }
+    header img {
+        width: 16em;
+        margin-top: 3em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    header .icons img {
+        width: 1.5em;
+        margin-left: -3em;
+    }
+    header .icons {
+        gap: 2.5em;
+    }
+}
 
 /* ------------------- */
 /* Menu */
@@ -101,11 +121,6 @@ header .icons a:hover img {
     z-index: 999;
     margin-top: 4em;
     flex-direction: row;
-
-    h3{
-        box-sizing: border-box;
-    font-family: 'Dream Orphans', sans-serif !important;
-    }
 }
 
 #burger {
@@ -133,15 +148,17 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-    font-size: 0.9em !important;
-    font-weight: bold;
+    font-size: 3em !important;
+    font-weight: bold !important;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
-    font-size: 7em !important; 
+    font-size: 0.4em !important; 
+    font-family: 'Dream Orphans', sans-serif !important;
 }
+
 
 #navmenu a:hover {
     transform: scale(1.05);
@@ -206,6 +223,7 @@ header .icons a:hover img {
 #navmenu a {
     font-family: 'dream-orphans', sans-serif;
 }
+
 /* Fin Menu */
 
 

@@ -40,7 +40,8 @@ header img {
 }
 
 header .icons {
-    margin-left: auto; /* Empuja los íconos a la derecha */
+    margin-left: auto;
+    /* Empuja los íconos a la derecha */
     display: flex;
     gap: 2em;
     align-items: center;
@@ -49,12 +50,13 @@ header .icons {
 }
 
 header .icons img {
-    width: 3em; /* tamaño de los íconos */
+    width: 3em;
+    /* tamaño de los íconos */
     height: auto;
 }
 
-header .icons a:hover{
-    transform: scale(1.1);  
+header .icons a:hover {
+    transform: scale(1.1);
     cursor: poin
 }
 
@@ -86,11 +88,6 @@ header .icons a:hover img {
     z-index: 999;
     margin-top: 4em;
     flex-direction: row;
-
-    h3 {
-        box-sizing: border-box;
-        font-family: 'Dream Orphans', sans-serif !important;
-    }
 }
 
 #burger {
@@ -118,14 +115,15 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-    font-size: 0.9em !important;
+    font-size: 0.2em !important;
     font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
-    font-size: 7em !important; 
+    font-size: 6.5em !important;
+    font-family: 'Dream Orphans', sans-serif !important;
 }
 
 #navmenu a:hover {
@@ -189,7 +187,7 @@ header .icons a:hover img {
 
 #menu,
 #navmenu a {
-    font-family: 'dream-orphans', sans-serif;
+    font-family: 'dream-orphans', sans-serif !important;
 }
 
 /* Fin Menu */
@@ -268,7 +266,7 @@ h7 {
 }
 
 .container2 {
-    max-width: 60%;
+    max-width: 85%;
     margin: auto;
     padding: 40px;
     border-radius: 20px;

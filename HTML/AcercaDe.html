@@ -30,7 +30,7 @@
             <a href="./Servicios.html">
                 <h3>Servicios</h3>
             </a>
-            <a href="">
+            <a href="./ProcesoCompra.html">
                 <h3>Proceso de compra</h3>
             </a>
             <a href="./Contacto.html">
@@ -83,6 +83,7 @@
                     <h2>¡Hola! soy</h2>
                     <br>
                     <h2>Neitan Daniel Morales Conejo</h2>
+                    <br>
                     <br>
                 </div>
                 <div class="info2">
@@ -163,7 +164,7 @@
         document.querySelectorAll('#navmenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                burgerIcon.src = "./img/menu.png";
+                burgerIcon.src = "../img/menu.png";
                 menuOpen = false;
             });
         });

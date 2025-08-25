@@ -154,16 +154,15 @@ header .icons a:hover img {
 #navmenu a {
     text-decoration: none;
     color: #101014;
-    font-size: 3em !important;
-    font-weight: bold !important;
+    font-size: 1.2 !important;
+    font-weight: bold;
     transition: transform 0.3s ease;
     border-radius: 0.5em;
 }
 
 #navmenu a h3 {
-    font-size: 0.4em !important; 
+    font-size: 1.2em !important; 
 }
-
 
 #navmenu a:hover {
     transform: scale(1.05);
@@ -194,6 +193,7 @@ header .icons a:hover img {
 @media (max-width: 768px) {
     #burger {
         display: block;
+        align-self: right !important;
     }
 
     #navmenu {
@@ -541,15 +541,15 @@ div {
         max-width: 300px;
     }
     .promo-texto {
-        max-width: 100%;
+        max-width: 90%;
     }
     .promo-texto .marca,
     .promo-texto .degradado {
-        font-size: 1em !important;
+        font-size: 2.5em !important;
         margin-left: 0;
     }
     .promo-texto p {
-        font-size: 0.9em;
+        font-size: 1.3em !important;
     }
 }
 
@@ -569,14 +569,22 @@ div {
         min-height: 180px;
     }
     .title-image {
-        width: 100%;
-        max-width: 200px;
+        width: 23em !important;
+        margin-bottom: -2em;
     }
     .carousel-item h3 {
-        font-size: 1.2em;
+        font-size: 2em !important;
     }
     .carousel-item p {
-        font-size: 1em;
+        font-size: 1.5em !important;
+    }
+    .reproductores {
+        max-width: 30em !important;
+        margin-top: -32em !important;
+    }
+    .description {
+        font-size: 1.3em !important;
+        margin-top: 10px !important;
     }
 }
 
@@ -659,12 +667,13 @@ div {
 
 @media (max-width: 600px) {
     footer {
-        padding: 5px;
+        padding: 1em;
         margin-top: 0.5em;
     }
     footer .textos img {
         width: 2em;
-        margin-top: -0.5em;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
     }
     footer .textos h2 {
         font-size: 1em;

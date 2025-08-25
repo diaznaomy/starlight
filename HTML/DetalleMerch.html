@@ -8,6 +8,11 @@
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="./css/bootstrap-brite.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    
     <link rel="stylesheet" href="../CSS/DetalleMerch.css">
 </head>
 
@@ -32,7 +37,7 @@
             <a href="./Servicios.html">
                 <h3>Servicios</h3>
             </a>
-            <a href="">
+            <a href="./ProcesoCompra.html">
                 <h3>Proceso de compra</h3>
             </a>
             <a href="./Contacto.html">
@@ -337,10 +342,78 @@
             const nombre = document.getElementById('nombreResena').value;
             const comentario = document.getElementById('comentarioResena').value;
             const calificacion = this.getAttribute('data-calificacion') || 0;
-            alert(`Reseña enviada:\nNombre: ${nombre}\nComentario: ${comentario}\nCalificación: ${calificacion} estrellas`);
-            // Aquí puedes agregar la lógica para mostrar la reseña en la página
+
+            // Crear estrellas según calificación
+            let estrellasHtml = '';
+            for (let i = 1; i <= calificacion; i++) {
+                estrellasHtml += `<img src="../img/${i}star.png" alt="estrella" width="32">`;
+            }
+
+            // Crear nueva reseña
+            const nuevaResena = document.createElement('div');
+            nuevaResena.className = 'resena-card mt-4';
+            nuevaResena.innerHTML = `
+                <h3 class="resena-nombre">${nombre}</h3>
+                <div class="resena-votos">
+                    <button class="btn-like" onclick="votarResena(this, 'like')">
+                        <img src="../img/like.png" alt="Like" width="32">
+                    </button>
+                    <span class="like-count">0</span>
+                    <button class="btn-dislike ms-2" onclick="votarResena(this, 'dislike')">
+                        <img src="../img/dislike.png" alt="Dislike" width="32">
+                    </button>
+                    <span class="dislike-count">0</span>
+                </div>
+                <div class="resena-calificacion mb-2">
+                    ${estrellasHtml}
+                </div>
+                <div class="resena-comentario">
+                    Comentario: ${comentario}
+                </div>
+            `;
+
+            // Agregar la reseña al contenedor
+            document.querySelector('.detalle-resenas').appendChild(nuevaResena);
+            toastr.success('¡Reseña enviada con éxito!');
+            // Limpiar el formulario
+            this.reset();
+            document.querySelectorAll('.estrella-form').forEach(s => {
+                s.classList.remove('selected');
+                s.src = '../img/star-outline.png';
+            });
+            this.removeAttribute('data-calificacion');
         });
     </script>
+    <script>
+        const burgerIcon = document.getElementById('burgerIcon');
+        const navMenu = document.getElementById('navmenu');
+        let menuOpen = false;
+
+        burgerIcon.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            navMenu.classList.toggle('active');
+
+            // Cambiar ícono
+            burgerIcon.src = menuOpen ? "../img/close.png" : "../img/menu.png";
+        });
+
+        // Cierra el menú al hacer clic en un enlace (solo en mobile)
+        document.querySelectorAll('#navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerIcon.src = "../img/menu.png";
+                menuOpen = false;
+            });
+        });
+    </script>
+
+    <!-- JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Notificaciones Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </body>
 
 </html>

@@ -33,7 +33,7 @@
             <a href="./Servicios.html">
                 <h3>Servicios</h3>
             </a>
-            <a href="">
+            <a href="./ProcesoCompra.html">
                 <h3>Proceso de compra</h3>
             </a>
             <a href="./Contacto.html">
@@ -159,14 +159,14 @@
             navMenu.classList.toggle('active');
 
             // Cambiar ícono
-            burgerIcon.src = menuOpen ? "./img/close.png" : "./img/menu.png";
+            burgerIcon.src = menuOpen ? "../img/close.png" : "../img/menu.png";
         });
 
         // Cierra el menú al hacer clic en un enlace (solo en mobile)
         document.querySelectorAll('#navmenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                burgerIcon.src = "./img/menu.png";
+                burgerIcon.src = "../img/menu.png";
                 menuOpen = false;
             });
         });

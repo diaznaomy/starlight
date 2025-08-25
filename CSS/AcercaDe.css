@@ -395,3 +395,113 @@ footer .textos h3 {
     color: #101014;
     font-family: 'Rosie', sans-serif !important;
 }
+
+/* Responsive para tarjetas de autores */
+@media (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 2em;
+        margin: 1em 0;
+        width: 100%;
+    }
+    .card, .card2 {
+        display: block !important;
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto 2em auto;
+        padding: 1.5em;
+        box-sizing: border-box;
+    }
+    .card img, .card2 img {
+        width: 100%;
+        max-width: 300px; /* aún más grande */
+        height: auto;
+        margin: 0 auto 1em auto;
+        display: block;
+    }
+    .name, .name2,
+    .info, .info2,
+    .description, .description2 {
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .description, .description2 {
+        margin-top: -2.1em;
+    }
+    h1 {
+        font-size: 1.5em;
+        text-align: left;
+        margin-left: 0.5em;
+    }
+    .degradado {
+        font-size: 1.2em;
+        text-align: left;
+        margin-left: 0.5em;
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        gap: 1em;
+        width: 100%;
+    }
+    .card, .card2 {
+        width: 98%;
+        max-width: 320px;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+    .card img, .card2 img {
+        max-width: 220px; /* aún más grande en móviles */
+        margin-bottom: 0.5em;
+    }
+    h1 {
+        font-size: 1.1em;
+        text-align: left;
+        margin-left: 0.5em;
+    }
+    .degradado {
+        font-size: 1em;
+        text-align: left;
+        margin-left: 0.5em;
+    }
+}
+
+/* Responsive para textos y historia */
+@media (max-width: 900px) {
+    .container2 {
+        width: 90%;
+        margin: 2em auto 1em auto;
+        font-size: 1em;
+        padding: 1em;
+    }
+    .container2 p {
+        font-size: 1em;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .highlight, .highlight2 {
+        font-size: 1em;
+    }
+}
+
+/* Responsive para títulos */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    h3 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .degradado {
+        font-size: 1.2em;
+        margin-left: 3em;
+    }
+}

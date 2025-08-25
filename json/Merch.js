@@ -250,8 +250,8 @@ const merch = [
   {
     id: 22,
     nombre: "Violent Vira",
-    imagen: "../img/merch/ViolentViraBack.png",
-    imagen2: "../img/merch/ViolentViraFront.png",
+    imagen: "../img/merch/ViolentViraFront.png",
+    imagen2: "../img/merch/ViolentViraBack.png",
     descripcion: "Tank top del poster de Violent Vira",
     precio: 8000,
     disponible: true,
